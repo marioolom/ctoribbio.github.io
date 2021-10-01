@@ -8,17 +8,24 @@ SLight:     #ffe54c
 SDark:      #c68400
 */
 
+
 /* Setting bgcolor and font family imported by google fonts api */
 html{
-    background-color: #455a64;
+    background-color: var(--mainColor);
     font-family: Ubuntu;
+    --mainColor: #455a64;
+    --mainLightColor: #718792;
+    --mainDarkColor: #1c313a;
+    --secondaryColor: #ffb300;
+    --secondaryLightColor: #ffe54c;
+    --secondaryDarkColor : #c68400;
 }
 
 /* HEADER RELATED */
 
 /* Setting bgcolor */
 header{
-    background-color: #1c313a;
+    background-color: var(--mainDarkColor);
 }
 
 /* setting margin to 0 to get rid of space between header and navbar, aligning text and making it to float center, and setting color to white */
@@ -39,7 +46,7 @@ h1,h2{
 nav{
     position:sticky;
     top:0;
-    background-color: #1c313a;
+    background-color: var(--mainDarkColor);
     text-align:center;
     width: 100%;
     
@@ -64,7 +71,7 @@ li {
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    background-color: #1c313a;
+    background-color: var(--mainDarkColor);
     color: white;
     padding: 12px;
     font-size: 16px;
@@ -78,15 +85,11 @@ li.dropdown{
     display: inline-block;
 }
 /* making the content not visible, and giving those button the color, plus a minimal width to make it even. */
-#current{   
-    border-bottom-style:solid;
-    border-color: #c68400;
-}
 
 .dropdownContent{
     display: none;
     position:absolute;
-    background-color:#718792;
+    background-color:var(--mainLightColor);
     min-width:160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -101,7 +104,10 @@ li.dropdown{
     display: block;
     text-align: left;
 }   
-
+#current{   
+    border-bottom-style:solid;
+    border-color: var(--secondaryDarkColor);
+}
 /* changing bgccolor on hover, and displaying the dropdown menu  */
 
 .dropdownContent a:hover{
@@ -112,7 +118,7 @@ li.dropdown{
 }
 /* changing color whenever hovered to all the buttons  */
 li a:hover,.dropdown:hover .dropButton {
-    background-color: #ffb300;
+    background-color: var(--secondaryColor);
     color:black;
 }
 /* Pointer for the menus and setting font up  */
