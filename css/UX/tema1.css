@@ -1,0 +1,146 @@
+/* Color Palette: 
+Primary:    #455a64
+PLight:     #718792
+PDark:      #1c313a
+
+Secondary:  #ffb300
+SLight:     #ffe54c
+SDark:      #c68400
+*/
+
+/* Setting bgcolor and font family imported by google fonts api */
+html{
+    background-color: #455a64;
+    font-family: Ubuntu;
+}
+
+/* HEADER RELATED */
+
+/* Setting bgcolor */
+header{
+    background-color: #1c313a;
+}
+
+/* setting margin to 0 to get rid of space between header and navbar, aligning text and making it to float center, and setting color to white */
+h1,h2{
+    margin-top: 0;
+    margin-bottom: 0%;
+    text-align: center;
+    float:center;
+    padding: 4px;
+    color: white;
+}
+
+/* NAVBAR RELATED */
+
+
+/* bgcolor and aligning icos  */
+
+nav{
+    position:sticky;
+    top:0;
+    background-color: #1c313a;
+    text-align:center;
+    width: 100%;
+    
+}
+/* no style and no margin nor padding  */
+
+ul {  
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+  }
+  /* horizontal display and no margins */
+
+li {
+    display: inline-block;
+    margin: 0%;
+}
+/* displaying it inline, aligning, getting rid of the button decorations, color, padding to te sides, and adjusting font side */
+
+.button, .dropButton{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #1c313a;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+}
+li.dropdown{
+    display: inline-block;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+/* making the content not visible, and giving those button the color, plus a minimal width to make it even. */
+
+.dropdownContent{
+    display: none;
+    position:absolute;
+    background-color:#718792;
+    min-width:160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* formatting the text of the contet */
+
+.dropdownContent a{
+    float :none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none; 
+    display: block;
+    text-align: left;
+}   
+#current{   
+    border-bottom-style:solid;
+    border-color: #c68400;
+}
+
+/* changing bgccolor on hover, and displaying the dropdown menu  */
+
+.dropdownContent a:hover{
+    background-color: #ffffee;
+}
+.dropdown:hover .dropdownContent {
+    display:block;
+}
+/* changing color whenever hovered to all the buttons  */
+li a:hover,.dropdown:hover .dropButton {
+    background-color: #ffb300;
+    color:black;
+}
+/* Pointer for the menus and setting font up  */
+button, a{
+    font-family: Ubuntu;
+    cursor: pointer;
+}
+
+/* NAVBAR RELATED */
+
+article{
+    background-color: #718792;
+}
+article a{
+    color: black;
+    text-decoration: none;
+    padding: 6px;
+    
+}
+.menuPracs{
+    display: block;
+    padding: 4px;
+}
+h3{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+li a.pracsButton:hover{
+    background-color: #1c313a;
+    color:white;
+}
