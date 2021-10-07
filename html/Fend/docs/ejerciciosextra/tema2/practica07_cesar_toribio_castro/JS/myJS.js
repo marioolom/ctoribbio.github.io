@@ -50,6 +50,6 @@ for (var i = 0; i < contador; i++) {
     totalDevolucionesMes=totalDevoluciones+totalDevolucionesMes;
     totalMalasMes=totalMalas+totalMalasMes;
 }
-    alert("Resumen de los ultimos "+contador+" dias\n Total Entregadas: "+2000*contador+"\n Total Devueltas: "+totalDevolucionesMes+"\n Total en Mal Estado: "+totalMalasMes+"\n Total Pendientes: "+pendientes);
+    alert("Resumen de los ultimoss "+contador+" dias\n Total Entregadas: "+2000*contador+"\n Total Devueltas: "+totalDevolucionesMes+"\n Total en Mal Estado: "+totalMalasMes+"\n Total Pendientes: "+pendientes);
 
 
