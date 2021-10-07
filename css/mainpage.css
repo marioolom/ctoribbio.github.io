@@ -74,8 +74,9 @@ li {
     background-color: var(--mainDarkColor);
     color: white;
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
+
 }
 li.dropdown{
     display: inline-block;
