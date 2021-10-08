@@ -24,7 +24,7 @@ while(stock>0){ //mientras el stock sea superior a 2000 se ejecutan las entregas
         totalDevoluciones=totalDevoluciones+devoluciones;
         if(confirm("Existen vacunas en mal estado?")==true){
             var malas=parseInt(prompt("Introduce el numero de vacunas que han sido devueltas"));
-            while(isNaN(malas)==true){
+            while(isNaN(malas)==true||malas>devoluciones){
                 malas=parseInt(prompt("Has introducido un dato invalido, introduce un numero"));
             }
             totalMalas=totalMalas+malas;            

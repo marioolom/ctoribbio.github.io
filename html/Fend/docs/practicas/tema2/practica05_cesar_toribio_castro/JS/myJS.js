@@ -55,14 +55,12 @@ alert(count);
 
 alert("Ejercicio 7");
 count=0;
-var titulo='';
+var titulo=prompt("Introduce un titulo de libro");
 var lista='';
 while(titulo.toLowerCase()!='salir'){
-    titulo=prompt("Introduce un titulo de libro") ;
     count++;
-    if(titulo.toLowerCase()!='salir'){
-        lista+=count+('.- ')+titulo+'\n';
-    }
+    lista+=count+('.- ')+titulo+'\n';
+    titulo=prompt("Introduce un titulo de libro");
 }
 alert(lista);
 
