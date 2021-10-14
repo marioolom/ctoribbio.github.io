@@ -1,11 +1,11 @@
-alert("Ejercicio 1");
+alert("Ejercicio 1.- Introducir nombres y mostrarlos");
 var nombres = new Array(10);
 for (var i = 0; i < nombres.length; i++) {
     nombres[i] = prompt("Introduce el nombre numero " + (i + 1));
 }
 alert(nombres.join());
 
-alert("Ejercicio 2");
+alert("Ejercicio 2.- Arrays con elementos.");
 var array1 = new Array(5);
 var array2 = new Array(5);
 for (var i = 0; i < array1.length; i++) {
@@ -31,7 +31,7 @@ if (boolean == true) {
     alert("No contienen los mismos elementos");
 }
 
-alert("Ejercicio 3");
+alert("Ejercicio 3.- Suma y Producto de Array con numeros iguales");
 var nums = new Array(10);
 for (var i = 0; i < nums.length; i++) {
     do {
@@ -46,7 +46,7 @@ for (var i = 0; i < nums.length; i++) {
 }
 alert("Resultado\n Suma: " + result[0] + "\n Producto: " + result[1]);
 
-alert("Ejercicio 4");
+alert("Ejercicio 4.- Comprobar dias lectivos de Diciembre");
 var diciembre = new Array(31);
 for (var i = 0; i < diciembre.length; i++) {
     diciembre[i] = i + 1;
@@ -77,4 +77,13 @@ while (consulta.toLowerCase()!= "salir") {
     }
     consulta = prompt("Introduce el dia que quieres consultar");
 }
-alert("Ejercicio 5");
+alert("Ejercicio 5.- Mostrar info. profesores y asignaturas");
+
+var arrayProfesores= ["Daniel","Jose Luis","Ana Rosa","Nacho"];
+var arrayAlumnos= ["20","18","23","15"];
+var arrayAsignatura= ["DWEC","DWES","DINT","DAPW"];
+var alerta="";
+for(var i=0;i<arrayProfesores.length;i++){
+    alerta=alerta+(arrayProfesores[i]+" imparte la asignatura de "+arrayAsignatura[i]+" y tiene "+arrayAlumnos[i]+" alumnos en clase.\n");
+}
+alert(alerta);
