@@ -1,39 +1,80 @@
-var stock=2000;
-var totalMalas=0;
-var totalDevoluciones=0;
-var pendientes=0; //guardamos las vacunas pendientes
-while(stock>0){ //mientras el stock sea superior a 2000 se ejecutan las entregas
-    alert(stock+" vacunas disponibles");
-    if(stock<400){
-        alert("Hay menos de 400 vacunas disponibles.")
-    }
-    var entrega=parseInt(prompt("Introduce el numero de vacunas que hay que entregar"));
-    while(isNaN(entrega)==true){ //comprobacion de numero
-        entrega=parseInt(prompt("Has introducido un dato invalido, introduce un numero"));
-    }
-    if(stock<entrega){
-        pendientes=entrega-stock;
-        alert("Solo tienes "+stock+" vacunas disponibles, tienes "+pendientes+" pendientes de entregar")
-    }
-    stock=stock-entrega;
-    if(confirm("Existen devoluciones?")==true){
-        var devoluciones=parseInt(prompt("Introduce el numero de vacunas que han sido devueltas"));
-        while(isNaN(devoluciones)==true){
-            devoluciones=parseInt(prompt("Has introducido un dato invalido, introduce un numero"));
-        }
-        totalDevoluciones=totalDevoluciones+devoluciones;
-        if(confirm("Existen vacunas en mal estado?")==true){
-            var malas=parseInt(prompt("Introduce el numero de vacunas que han sido devueltas"));
-            while(isNaN(malas)==true||malas>devoluciones){
-                malas=parseInt(prompt("Has introducido un dato invalido, introduce un numero"));
-            }
-            totalMalas=totalMalas+malas;            
-        }
-        stock=stock+(devoluciones-malas);
-    }
-    stock>=0 ? alert("Hay "+stock+" vacunas disponibles actualmente") : alert("Hay 0 vacunas disponibles actualmente");
-    
-
+alert("Ejercicio 1");
+var nombres = new Array(10);
+for (var i = 0; i < nombres.length; i++) {
+    nombres[i] = prompt("Introduce el nombre numero " + (i + 1));
 }
-alert("Resumen del dia\n Total Entregadas: 2000\n Total Devueltas "+totalDevoluciones+"\n Total en Mal Estado: "+totalMalas+" \n Total Pendientes: "+pendientes);
-alert("Fin del programa");
+alert(nombres.join());
+
+alert("Ejercicio 2");
+var array1 = new Array(5);
+var array2 = new Array(5);
+for (var i = 0; i < array1.length; i++) {
+    array1[i] = prompt("Introduce el elemento numero " + (i + 1));
+}
+for (var i = 0; i < array2.length; i++) {
+    array2[i] = prompt("Introduce el elemento numero " + (i + 1));
+}
+if (array1.length == array2.length) {
+    alert("Los dos Arrays son iguales");
+} else {
+    alert("Los dos Arrays son distintos");
+}
+var boolean = true;
+for (var i = 0; i < array1.length; i++) {
+    if (array1[i] != array2[i]) {
+        boolean = false;
+    }
+}
+if (boolean == true) {
+    alert("Los dos arrays contienen los mismos elementos");
+} else {
+    alert("No contienen los mismos elementos");
+}
+
+alert("Ejercicio 3");
+var nums = new Array(10);
+for (var i = 0; i < nums.length; i++) {
+    do {
+        var num = prompt("Introduce el numero " + i);
+        nums[i] = num;
+    } while (isNaN(num) || num != nums[0])
+}
+var result = [0, 1];
+for (var i = 0; i < nums.length; i++) {
+    result[0] = parseInt(result[0]) + parseInt(nums[i]);
+    result[1] = parseInt(result[1]) * parseInt(nums[i]);
+}
+alert("Resultado\n Suma: " + result[0] + "\n Producto: " + result[1]);
+
+alert("Ejercicio 4");
+var diciembre = new Array(31);
+for (var i = 0; i < diciembre.length; i++) {
+    diciembre[i] = i + 1;
+}
+var festivos = [6, "Fiesta Laboral", 7, "Dia No lectivo", 8, "Fiesta Laboral"];
+var consulta = prompt("Introduce el dia que quieres consultar");
+while (consulta.toLowerCase()!= "salir") {
+    boolean = false;
+    for (var i = 0; i < festivos.length; i++) {
+        if (parseInt(consulta) > 31) {
+            alert("Dia no Valido")
+            boolean = true;
+            break;
+        }
+        if (parseInt(consulta) >= 23) {
+            alert("Dia " + consulta + ": Vacaciones de navidad");
+            boolean = true;
+            break;
+        }
+        if (parseInt(consulta) == festivos[i]) {
+            alert("Dia " + festivos[i] + ": " + festivos[i + 1]);
+            boolean = true;
+            break;
+        }
+    }
+    if (boolean == false) {
+        alert("Dia Lectivo");
+    }
+    consulta = prompt("Introduce el dia que quieres consultar");
+}
+alert("Ejercicio 5");
