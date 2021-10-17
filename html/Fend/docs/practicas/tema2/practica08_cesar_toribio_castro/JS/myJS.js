@@ -10,7 +10,7 @@ for (var j = 0; j < 8; j++) {
     pareja.push(equipo);
     equipo = []; //reiniciamos el array a nada, para evitar que se rellene de nuevo y borre lo anterior 
 }
-var lista = "Cuartos de final\n-------------------------\n";
+var lista = "Viernes: Cuartos de final\n-------------------------\n";
 for (var i = 0; i < pareja.length; i++) {
     lista = lista + pareja[i][0] + " y " + pareja[i][1] + " contra " + pareja[i + 1][0] + " y " + pareja[i + 1][1] + "\n";
     i++ // volvemos a subir el contador para que pase directamente a la siguiente parjea
@@ -36,7 +36,7 @@ for (var i = 0; i < pareja.length; i++) {
 }
 pareja = pareja2;
 //CODIGO REPETIDO LINEA 13
-var lista = "Semifinales\n-------------------------\n";
+var lista = "Sabado: Semifinales\n-------------------------\n";
 for (var i = 0; i < pareja.length; i++) {
     lista = lista + pareja[i][0] + " y " + pareja[i][1] + " contra " + pareja[i + 1][0] + " y " + pareja[i + 1][1] + "\n";
     i++ 
@@ -64,7 +64,7 @@ for (var i = 0; i < pareja.length; i++) {
 }
 pareja = pareja2;
 
-var lista = "LA GRAN FINAL!!\n-----------------------------\n";
+var lista = "DOMINGO: LA GRAN FINAL!!\n-----------------------------\n";
     lista = lista + pareja[0][0] + " y " + pareja[1][1] + " contra " + pareja[1][0] + " y " + pareja[1][1] + "\n";
     // hago la lista en este caso sin contador para no entrar en un bucle de dos solos elementos de los cuales conozco la posicion 
 alert(lista);
