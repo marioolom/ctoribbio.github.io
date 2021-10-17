@@ -75,4 +75,5 @@ if (opcion == true) {
     alert("Los ganadores del torneo son: " + pareja[0][0] + " y " + pareja[0][1] + " \nFELICIDADES, SOIS LOS GANADORES DE UN JAMON");
 } else { 
     alert("Los ganadores del torneo son: " + pareja[1][0] + " y " + pareja[1][1] + " \nFELICIDADES, SOIS LOS GANADORES DE UN JAMON");
-} //if para saber cual de los dos finalistas es el ganador del torneo 
+} //if para saber cual de los dos finalistas es el ganador del torneo
+alert("Fin del programa.");
