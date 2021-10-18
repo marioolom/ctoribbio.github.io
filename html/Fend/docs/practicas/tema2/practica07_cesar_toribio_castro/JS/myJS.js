@@ -53,7 +53,7 @@ for (var i = 0; i < diciembre.length; i++) {
 }
 var festivos = [6, "Fiesta Laboral", 7, "Dia No lectivo", 8, "Fiesta Laboral"];
 var consulta = prompt("Introduce el dia que quieres consultar");
-while (consulta.toLowerCase()!= "salir") {
+while (consulta.toLowerCase() != "salir") {
     boolean = false;
     for (var i = 0; i < festivos.length; i++) {
         if (parseInt(consulta) > 31) {
@@ -79,11 +79,11 @@ while (consulta.toLowerCase()!= "salir") {
 }
 alert("Ejercicio 5.- Mostrar info. profesores y asignaturas");
 
-var arrayProfesores= ["Daniel","Jose Luis","Ana Rosa","Nacho"];
-var arrayAlumnos= ["20","18","23","15"];
-var arrayAsignatura= ["DWEC","DWES","DINT","DAPW"];
-var alerta="";
-for(var i=0;i<arrayProfesores.length;i++){
-    alerta=alerta+(arrayProfesores[i]+" imparte la asignatura de "+arrayAsignatura[i]+" y tiene "+arrayAlumnos[i]+" alumnos en clase.\n");
+var arrayProfesores = ["Daniel", "Jose Luis", "Ana Rosa", "Nacho"];
+var arrayAlumnos = ["20", "18", "23", "15"];
+var arrayAsignatura = ["DWEC", "DWES", "DINT", "DAPW"];
+var alerta = "";
+for (var i = 0; i < arrayProfesores.length; i++) {
+    alerta = alerta + (arrayProfesores[i] + " imparte la asignatura de " + arrayAsignatura[i] + " y tiene " + arrayAlumnos[i] + " alumnos en clase.\n");
 }
 alert(alerta);

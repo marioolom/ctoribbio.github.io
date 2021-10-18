@@ -2,11 +2,11 @@ var pareja = [];    //Array para las parejas
 var equipo = new Array(3); //Array de 3 posiciones, dos de nombres de jugadores, y uno tercero para comprobar si siguen clasificados 
 
 for (var j = 0; j < 8; j++) { //Bucle para rellenar el array
-    alert("Datos de la pareja " + (j + 1)); 
+    alert("Datos de la pareja " + (j + 1));
     for (var k = 0; k < 2; k++) { //Establezco dos para el contador para que solo pida nombres de los jugadores
-        do{
+        do {
             equipo[k] = prompt("Introduce el nombre y apellido del jugador " + (k + 1) + " de la pareja " + (j + 1));
-        }while(isNaN(parseInt(equipo[k]))==false) //validamos que los datos introducidos sean una cadena
+        } while (isNaN(parseInt(equipo[k])) == false) //validamos que los datos introducidos sean una cadena
     }
     equipo[2] = true; //establecemos en tercera posicion que siguen clasificados
     pareja.push(equipo); //introducimos el array recien creado al array de las parejas
