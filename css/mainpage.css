@@ -129,3 +129,27 @@ button, a{
 }
 
 /* NAVBAR RELATED */
+
+article{
+    background-color: #718792;
+}
+article a{
+    color: black;
+    text-decoration: none;
+    padding: 6px;
+    
+}
+h3{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+li a.pracsButton:hover{
+    background-color: var(--mainDarkColor);
+    color:white;
+}
+.rrss{
+    color: var(--mainDarkColor);
+}
+.rrss:hover{
+    color:var(--secondaryColor);    
+}

@@ -8,6 +8,19 @@
         <title>Repositorio 2º de DAW</title>
         <link rel="stylesheet" href="css/mainpage.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            function getAge(dateString) {
+                var today = new Date();
+                var birthDate = new Date(dateString);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var m = today.getMonth() - birthDate.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                return age;
+            }
+        </script>
     </head>
 
     <body>
@@ -50,6 +63,16 @@
         </nav>
         <section>
             <article>
+                <h3>Presentación</h3>
+                <p>Hola, mi nombre es César Toribio, tengo <script> document.write(getAge("2001/05/07").toString())</script> años, y actualmente soy estudiante de Desarrollo de Aplicaciones Web en Valladolid. </p>
+            </article>
+            <article>
+                <h3>Redes Sociales</h3>
+                <p>     <a target="_blank" href="your_url_here"><em class="fa fa-3x fa-linkedin-square rrss"></i></em>
+                        <a target="_blank" href="your_url_here"><em class="fa fa-3x fa-twitter rrss"></i></em>
+                        <a target="_blank" href="your_url_here"><em class="fa fa-3x fa-github rrss"></i></em>
+                        <a target="_blank" href="your_url_here"><em class="fa fa-3x fa-reddit rrss"></i></em>
+                </p>
             </article>
         </section>
     </body>
