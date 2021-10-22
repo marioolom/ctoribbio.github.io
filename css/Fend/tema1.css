@@ -104,9 +104,8 @@ li.dropdown{
     display: block;
     text-align: left;
 }   
-#current{   
-    border-bottom-style:solid;
-    border-color: var(--secondaryDarkColor);
+#current{
+    box-shadow:inset 0px -3px 0px 0px var(--secondaryDarkColor);
 }
 /* changing bgccolor on hover, and displaying the dropdown menu  */
 
@@ -154,4 +153,7 @@ li a.pracsButton:hover{
     background-color: #718792;
     color:black;
     cursor:default;
+}
+.practicas{
+    padding:2px;
 }
