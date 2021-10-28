@@ -49,3 +49,52 @@ if(boolean==true){
     alert(tmp.join());
 }
 
+alert("Ejercicio 3");
+
+var cadena=prompt("Introduce una cadena");
+var contadora=0;
+var contadore=0;
+var contadori=0;
+var contadoro=0;
+var contadoru=0;
+var contadorA=0;
+var contadorE=0;
+var contadorI=0;
+var contadorO=0;
+var contadorU=0;
+for(var i=0;i<cadena.length;i++){
+    switch(cadena.charAt(i)){
+        case "a":
+            contadora++;
+            break;
+        case "e":
+            contadore++;
+            break;
+        case "i":
+            contadori++;
+            break;
+        case "o":
+            contadoro++;
+            break;
+        case "u":
+            contadoru++;
+            break;
+        case "A":
+            contadorA++;
+            break;
+        case "E":
+            contadorE++;
+            break;
+        case "I":
+            contadorI++;
+            break;
+        case "O":
+            contadorO++;
+            break;
+        case "U":
+            contadorU++;
+            break;
+    }
+}
+alert("Numero de vocales en la cadena=\n a="+contadora+"\ne="+contadore+"\ni="+contadori+"\no="+contadoro+"\nu="+contadoru+"\nA="+contadorA+"\nE="+contadorE+"\nI="+contadorI+"\nO="+contadorO+"\nU="+contadorU);
+
