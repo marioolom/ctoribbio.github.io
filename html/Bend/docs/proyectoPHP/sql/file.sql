@@ -5,6 +5,8 @@ CREATE DATABASE ventaentradas;
 CREATE TABLE users(
     username varchar(255),
     password varchar(255),
-    type number(1),
-    
+    nombre varchar(255),
+    apellidos varchar(255),
+    fechaNacimiento date,
+    tipoUsuario, number(1),    
 )
