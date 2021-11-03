@@ -23,7 +23,7 @@ CREATE TABLE eventos(
     nombreEvento varchar(255),
     descripcionEvento TEXT,
     localizacionEvento varchar(64),
-    FOREIGN KEY (idOrganizador) REFERENCES organizadores(idOrganizador)
+    FOREIGN KEY (idOrganizador) REFERENCES organizadores(idOrganizador) ON DELETE CASCADE
 );
 
 CREATE TABLE tickets(
@@ -31,7 +31,7 @@ CREATE TABLE tickets(
     idEvento int,
     precioTicket int(3),
     username varchar(255),
-    FOREIGN KEY (idEvento) REFERENCES eventos(idEvento),
+    FOREIGN KEY (idEvento) REFERENCES eventos(idEvento) ON DELETE CASCADE,
     FOREIGN KEY (username) REFERENCES users(username)
 );
 
