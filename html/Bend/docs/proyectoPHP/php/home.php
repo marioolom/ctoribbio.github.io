@@ -20,6 +20,8 @@ if(isset($_POST['but_logout'])){
         <ul class="navbar">
             <li class="menuItem"><a href="../php/compra.php">Comprar Entradas</a></li>
             <li class="menuItem"><a href="../php/crearEvento.php">Crear Evento</a></li>
+            <li class="menuItem"><a href="../php/borrarEvento.php">Borrar Evento</a></li>
+            <li class="menuItem"><a href="../php/registro.php">Registro</a></li>
         </ul>
     </nav>
     <body>

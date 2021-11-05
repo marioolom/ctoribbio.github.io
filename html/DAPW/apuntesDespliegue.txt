@@ -1,0 +1,119 @@
+SaaS: Software as a service: Distribuir aplicaciones en nube a traves de Internet.
+        Gmail, Netflix, Twitter.
+PaaS: Platform as a service: Plataformas de desarrollo ofrecidas como servicio online, integran todos los elementos necesarios para el desarrollo de aplicaciones web.
+      Los usuarios de estos servicios pueden desarrollar ejecutar y administrar aplicaciones sin preocuparse de lo que habra por debajo    
+        Google App Engine, Herouku, Openshift
+IaaS: Infraestructure as a service: Nos permite virtualizar el Hardware y sistemas, nos permiten montar plataformas en ellas. Nos ofrecen recursos fisicos y virtuales encargandose de proporcionar
+      el Hardware necesario.
+        AWS, Azure y OpenStack.
+CaaS: Containers as a service: Es un nivel intermedio localizado entre la Infraestructura y la Plataforma, se utiliza para dar contenedores bajo demanda, que nos ofrece parte de Infraestructura
+      y parte de la Plataforma.
+      Docker
+FaaS: Function as a service: Sirven para que los desarrolladores diseñen, ejecuten y gestionen paquetes de apliaciones sin tener en cuenta la Infraestructura.
+    AWS Lambda, OpenFaas, Google Cloud Functions.
+
+HTTPS
+HTTP 3.0 
+Gemini
+
+Capturar el certificado en una red segura utilizando cada uno de estos protocolos 
+Conoces algun certificado raiz que haya caducado recientemente 
+
+
+
+apt-get install apache2
+ps -aux |grep "apache2"
+a2 ensite
+a2 dissite
+
+/var/www/html --Index del server apache 
+Directivas.
+      ServerRoot- Configurar el directorio raiz de la instalacion.
+      Timeout: Configurar tiempo maximo permitido antes de cerrar la conexion con el cliente
+      KeepAlive: COnfigurar si se permiten conexiones persistentes
+      MaxKeepAliveRequests: Configurar el maximo de conexiones persistentes
+      HostnameLookups: Configurar el diseñen
+      Include: Para incluir ficheros externos
+      Alias: Permite definir directorios virtuales en lugares distintos a los indicados en la URL
+      Redirect: Permite indicar que el documento ha sido actualizado o modificado
+
+Comandos ngnix 
+      nginx -v : Version de nginx
+      nginx -V : Version de nginx completo
+      nginx stop: Bajada del servidor rapida
+      nginx quit: Bajada del servidor correctamente
+Carpetas nginx
+      conf-mime.types,nginx.Conf
+      logs: logs
+      html- similar a htdocs
+
+Comandos para refrescar ventanas:
+
+Posibles Preguntas Examen Practico: 
+      Instalar servidor apache en Linux.
+      Hacer que el servidor trabaje con 2 sitios en 2 puertos simultaneos.
+      Crear pagina de error 404 en NGinx
+
+
+Posibles preguntas teoricas:
+      Comando instalacion de apache.
+      Ruta de directorios al raiz del servidor apache 
+      Directivas
+      Donde se almacenan los logs en NGinx
+      Comandos nginx
+      Estructura de carpetas y utilidad
+      
+APUNTES TEMA 2
+      ls comando para listar carpetas Linux
+            ls -l para ver la info en detalle 
+            ls -a para incluir los ocultos
+            la -r para aplicar de forma recursiva
+      chmod comando modificar permisos
+      chown
+
+
+
+FTP:
+      Es un servicio orientado a conexion
+      Creado en los 70
+      Utiliza los puertos 20 y 21 en FTP, para datos y control respectivamente
+      No tiene seguridad
+      Software Parte cliente y parte servidor
+Ejemplos de servidortes FTP
+      proftpd
+      vsftpd
+      filezilla
+Ejemplos de SW cliente 
+      Navegador
+      Modo texto
+      SW grafico -> Filezilla, Cyberduck,winscp
+Tipos de usuarios FTP
+      Anonimos
+            No autenticados
+      Autenticados
+            Del propio sistema 
+      Virtuales
+            Exclusivo del servidor FTP
+FTP con certificados.
+Descomentar directiva tls.conf
+Activar Directiva TLSEngine, TLSLog y TLSProtocol linea 27 y 28 y linea 49
+proftpd-gencert
+permisos 600 al archivo .key generado
+/etc/ssl/certs permisos 644 al .crt generado
+
+apt-get install proftpd-mod-crypto 
+descomentar linea 8 proftpd.conf
+añadir RequireValidShell      off a proftpd.conf
+descomentar linea 21 de modules.conf
+PARA CONECTAR CON O SIN CERTIFICADO  comentamos la linea 49 de tls.conf
+     
+Crear usuarios virtuales para FTP
+Creamos carpeta para los usuarios en /var por ejemplo /var/ftp/usuario
+Necesitamos conocer el uid de nuestro ftp con id ftp. por ejemplo uid=135(ftp)
+Pegamos este comando 
+sudo ftpasswd --passwd --name usuario1 --home /var/ftp/usuario1 --uid 135 --shell /bin/false --file /etc/proftpd/passwd.virtuales
+Cambiamos los permisos al archivo passwd.virtuales a 640||| sudo chmod 640 /etc/proftpd/passwd.virtuales 
+Cambiamos de propietario la carpeta del usuario||| sudo chown -R ftp /var/ftp/usuario1
+Activamos la directiva defaultroot y separamos la virgulilla de la linea 39 de proftp.conf
+Añadimos la directiva AuthUserFile        /etc/proftpd/passwd.virtuales a proftpd.conf
+Reiniciamos el servidor

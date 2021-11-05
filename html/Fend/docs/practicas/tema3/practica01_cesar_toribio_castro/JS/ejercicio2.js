@@ -68,6 +68,8 @@ function datosAlumnos(array, modo) {
             cadena = cadena + "Dias que cursa: " + convertirDia(parseInt(array[i].getDia1())) + " y " + convertirDia(parseInt(array[i].getDia2())) + "\n";
             console.log(array[i].getDia1());
             console.log(array[i].getDia2());
+        }else{
+            console.log("modo incorrect func datosAlumnos");
         }
         cadena = cadena + "-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x\n";
     }
@@ -85,30 +87,29 @@ function numeroAlumnosAsignatura(clase, array) {
 //CREAMOS UNA FUNCION QUE AÑADA A UN ARRAY SUPLEMENTARIO LOS DATOS DE LOS ALUMNOS QUE CURSAN UNA ASIGNATURA, UN DIA CONCRETO, LE PASAMOS COMO ARGUMENTO EL ARRAY DE LA ESCUELA, Y LUEGO DENTRO EN EL OTRO ARRAY AÑADIMOS SOLO 
 //LAS COINCIDENCIAS, Y DEVOLVEMOS EL NUMERO DE ALUMNOS EN BASE A LA LONGITUD DE ESE ARRAY, Y LLAMAMOS AL METODO DE LOS DATOS DE LOS ALUMNOS PASANDOLE COMO ARGUMENTO EL ARRAY SUPLEMENTARIO PARA QUE SOLO ENSEÑE LOS DATOS DE LOS ALUMNOS
 //QUE CUMPLAN LAS CONDICIONES
-function datosAlumnosAsignaturaDia(clase, array, dia) {
+function datosAlumnosAsignaturaDia(clase, array, dia, modo) {
     var arraytmp = new Array();
     for (var i = 0; i < array.length; i++) {
-        if (array[i].getClases() == clase.toLowerCase() && (array[i].getDia1() == dia || array[i].getDia2() == dia)) {
-            arraytmp.push(array[i]);
+        if (modo == 0) {
+            if (array[i].getClases() == clase.toLowerCase() && (array[i].getDia1() == dia || array[i].getDia2() == dia)) {
+                arraytmp.push(array[i]);
+                cadena = "Hay " + arraytmp.length + " alumnos que asisten a " + clase + " el " + convertirDia(parseInt(dia)) + "\n";
+            }
+        } else if (modo == 1) {
+            if (array[i].getClases() == clase.toLowerCase()) {
+                 arraytmp.push(array[i]); 
+                 cadena = "Hay " + arraytmp.length + " alumnos que asisten a " + clase+"\n";
+                }
+        } else {
+            console.log("modo incorrecto func datosAlumnosAsignatura");
         }
+
     }
-    cadena = "Hay " + arraytmp.length + " alumnos que asisten a " + clase + "el " + convertirDia(parseInt(dia)) + "\n";
+   
     //le pasamos el modo 1 para que muestre los datos de los dias que asisten a clase
     cadena = cadena + datosAlumnos(arraytmp, 1);
     return cadena;
 }
-//basicamente es la misma funcion pero solamente le pasamos como argumento la clase a la que asiste, no el dia (se que se podria hacer en una sola funcion con mas modos)
-function datosAlumnosAsignatura(clase, array) {
-    var arraytmp = new Array();
-    for (var i = 0; i < array.length; i++) {
-        if (array[i].getClases() == clase.toLowerCase())
-            arraytmp.push(array[i]);
-    }
-    cadena = "Hay " + arraytmp.length + " alumnos que asisten a " + clase + "\n";
-    cadena = cadena + datosAlumnos(arraytmp, 1);
-    return cadena;
-}
-
 
 //Creamos el menú
 var salir = false;
@@ -135,11 +136,11 @@ while (salir == false) {
                 while (isNaN(dia1) || dia1 < 0 || dia1 > 7) {
                     dia1 = prompt("Dato incorrecto\nIntroduce el primer dia que quieres conocer\n1.-Lunes \n2.-Martes \n3.-Miercoles \n4.-Jueves \n5.-Viernes \n6.-Sabado \n7.-Domingo");
                 }
-                alert(datosAlumnosAsignaturaDia("oleo", escuela, dia1));
+                alert(datosAlumnosAsignaturaDia("oleo", escuela, dia1, 0));
                 break;
             case 4:
                 var clases = prompt("Introduce el nombre de la clase que quieres conocer");
-                alert(datosAlumnosAsignatura(clases, escuela));
+                alert(datosAlumnosAsignaturaDia(clases, escuela, 1, 1));
                 break;
             case 5:
                 salir = true;
