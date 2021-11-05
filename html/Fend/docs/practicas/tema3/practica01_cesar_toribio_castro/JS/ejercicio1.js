@@ -1,5 +1,6 @@
 //Objeto Vehiculo y Comprador
 var concesionario = new Array();
+
 function Vehiculo(tipo, marca, estado) {
     this.tipo = tipo;
     this.marca = marca;
@@ -51,10 +52,10 @@ function introducirVehiculo(num) {
 }
 
 function datosVehiculosXCompradores(array) {
-    var contador=1;
+    var contador = 1;
     var cadena = "Hay " + contarVehiculos(array) + " Vehiculos en el concesionario\n\t\tCOMPRADORES\n";
     for (var i = 0; i < array.length; i++) {
-        if(concesionario[i].getEstado()!=3){
+        if (concesionario[i].getEstado() != 3) {
             cadena = cadena + "DNI del Comprador " + (contador) + ": " + concesionario[i].getDni() + "\n";
             contador++;
         }
@@ -72,13 +73,13 @@ function numeroVehiculosMarca(marca, array) {
 }
 
 //FIN DE FUNCIONES INICIO DE PROGRAMA
-var salir =false;
-while(salir==false){
-    var opcion=prompt("Introduce la opcion que quieres trabajar\n 0:Introducir Vehiculos\n1:Contar Vehiculos\n 2: Contar Vehiculos y conocer los DNIs de los compradores\n 3: Conocer vehiculos en stock de una marca\n 4:Salir");
-    if(opcion!=0&&concesionario.length==0){
+var salir = false;
+while (salir == false) {
+    var opcion = prompt("Introduce la opcion que quieres trabajar\n 0:Introducir Vehiculos\n1:Contar Vehiculos\n 2: Contar Vehiculos y conocer los DNIs de los compradores\n 3: Conocer vehiculos en stock de una marca\n 4:Salir");
+    if ((opcion != 0 && opcion!=4)&& concesionario.length == 0) {
         alert("No puedes acceder a estas opciones sin antes introducir vehiculos");
-    }else{
-        switch(parseInt(opcion)){
+    } else {
+        switch (parseInt(opcion)) {
             case 0:
                 var numero = parseInt(prompt("Introduce el numero de vehiculos que quieres introducir"));
                 for (var i = 1; i <= numero; i++) {
@@ -96,7 +97,7 @@ while(salir==false){
                 alert("Hay " + numeroVehiculosMarca(marca, concesionario) + " vehiculos de " + marca + " en el concesionario en stock");
                 break;
             case 4:
-                salir=true;
+                salir = true;
                 break;
             default:
                 alert("Opcion Invalida");
