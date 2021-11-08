@@ -22,6 +22,10 @@ if(isset($_POST['but_logout'])){
             <li class="menuItem"><a href="../php/crearEvento.php">Crear Evento</a></li>
             <li class="menuItem"><a href="../php/borrarEvento.php">Borrar Evento</a></li>
             <li class="menuItem"><a href="../php/registro.php">Registro</a></li>
+            <li class="menuItem"><a href="../php/loginOrganizador.php">Login Organizador</a></li>
+            <li class="menuItem"><a href="../php/registrarOrganizador.php">Registro Organizador</a></li>
+            <li class="menuItem"><a href="../php/sacarEntradas.php">Sacar Entradas</a></li>
+
         </ul>
     </nav>
     <body>

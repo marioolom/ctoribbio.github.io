@@ -14,7 +14,8 @@ CREATE TABLE users(
 CREATE TABLE organizadores(
     idOrganizador int AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(64),
-    descripcion varchar(64)
+    descripcion varchar(64),
+    codAcceso varchar(255)
 );
 
 CREATE TABLE eventos(
@@ -45,8 +46,8 @@ CREATE TABLE cupones(
 INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario) values
     ("root","root","root","root","1970-01-01",1);
 
-INSERT INTO organizadores(nombre,descripcion) values 
-    ("Fabrik Madrid", "Club de Musica Electronica");
+INSERT INTO organizadores(nombre,descripcion,codAcceso) values 
+    ("Fabrik Madrid", "Club de Musica Electronica","123");
 
 INSERT INTO eventos(idOrganizador,nombreEvento,descripcionEvento,localizacionEvento) values 
     (1,"Code Aniversario","Aniversario techno evento","Humanes, Madrid"),
