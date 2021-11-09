@@ -11,17 +11,27 @@ while($row = $result->fetch_array()){
 }
 
 if(isset($_POST['but_submit'])){
-    $sql_query2 = "select eventos.idEvento from eventos WHERE nombreEvento='".$_POST['idEvento']."';";
-    $result2 = mysqli_query($con,$sql_query);
-    echo $sql_query2;
+    $sql_query2 = "select idEvento from eventos WHERE nombreEvento='".$_POST['idEvento']."'GROUP BY idEvento;";
+    $result2 = mysqli_query($con,$sql_query2);
     while($row2 = $result2->fetch_array()){
         $rows2[] = $row2;
     }
-    foreach($rows2 as $row2){
-        echo $row2['idEvento']."<br>";
+    $bandera=true;
+    for($i=0;$_POST['numeroEntradas'];$i++){
+        $sql_query3="INSERT INTO tickets(idEvento,precioTicket) values
+        (".$row2['idEvento'].",".$_POST['precioEntradas'].");";
+        if(!mysqli_query($con,$sql_query3)){
+            $bandera=false;
+        }
+    }
+    if(!$bandera){
+        echo "Error";
+    }else{
+        echo "introducido";
     }
 
 }
+
 ?>
 <!doctype html>
 <html>
@@ -29,6 +39,10 @@ if(isset($_POST['but_submit'])){
     <body>
         <table border="2">
             <form method="post" action="">
+                <label for="idEvento">Numero de entradas (1-100):</label>
+                <input type="number" id="" name="numeroEntradas" min="1" max="100"><br>
+                <label for="idEvento">Precio de las entradas (1-9999):</label>
+                <input type="number" id="" name="precioEntradas" min="1" max="9999"><br>
                 <select name="idEvento">
                 <?php
                     foreach($rows as $row){
