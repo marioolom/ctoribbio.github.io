@@ -1,0 +1,14 @@
+html{
+    background-color: var(--mainColor);
+    font-family: Ubuntu;
+    --mainColor: #455a64;
+    --mainLightColor: #718792;
+    --mainDarkColor: #1c313a;
+    --secondaryColor: #ffb300;
+    --secondaryLightColor: #ffe54c;
+    --secondaryDarkColor : #c68400;
+}
+
+section{
+  display: flex;
+}

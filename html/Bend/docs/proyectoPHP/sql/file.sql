@@ -24,6 +24,7 @@ CREATE TABLE eventos(
     nombreEvento varchar(255),
     descripcionEvento TEXT,
     localizacionEvento varchar(64),
+    path varchar(255),
     FOREIGN KEY (idOrganizador) REFERENCES organizadores(idOrganizador) ON DELETE CASCADE
 );
 

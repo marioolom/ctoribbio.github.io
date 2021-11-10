@@ -9,15 +9,12 @@ $result = mysqli_query($con,$sql_query);
 while($row = $result->fetch_array()){
     $rows[] = $row;
 }
-
+$bandera=true;
 if(isset($_POST['but_submit'])){
-    $sql_query2 = "select idEvento from eventos WHERE nombreEvento='".$_POST['idEvento']."'GROUP BY idEvento;";
+    $sql_query2 = "select eventos.idEvento from eventos WHERE nombreEvento='".$_POST['idEvento']."';";
     $result2 = mysqli_query($con,$sql_query2);
-    while($row2 = $result2->fetch_array()){
-        $rows2[] = $row2;
-    }
-    $bandera=true;
-    for($i=0;$_POST['numeroEntradas'];$i++){
+    $row2 = mysqli_fetch_array($result2);
+    for($i=0;$i<$_POST['numeroEntradas'];$i++){
         $sql_query3="INSERT INTO tickets(idEvento,precioTicket) values
         (".$row2['idEvento'].",".$_POST['precioEntradas'].");";
         if(!mysqli_query($con,$sql_query3)){
@@ -29,9 +26,7 @@ if(isset($_POST['but_submit'])){
     }else{
         echo "introducido";
     }
-
 }
-
 ?>
 <!doctype html>
 <html>
