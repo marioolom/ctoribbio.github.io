@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$sql_query = "select MIN(tickets.precioTicket) as minPrecio,eventos.* from eventos,tickets WHERE tickets.username is null GROUP BY idEvento;";
+$sql_query = "select MIN(tickets.precioTicket) as minPrecio,eventos.*,organizadores.nombre from tickets,eventos INNER JOIN organizadores on organizadores.idOrganizador = eventos.idOrganizador WHERE tickets.username is null GROUP BY idEvento;";
 $result = mysqli_query($con,$sql_query);
 while($row = $result->fetch_array()){
     $rows[] = $row;
@@ -10,26 +10,23 @@ while($row = $result->fetch_array()){
 ?>
 <!doctype html>
 <html>
-    <head></head>
+    
+    <head>
+    <link rel="stylesheet" href="../css/prueba.css" type="text/css">
+    </head>
     <body>
-        <table border="2">
-            <tr>
-                <th>Nombre</th>
-                <th>Organizador</th>
-                <th>Localizacion</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-            </tr>
+        <div>
             <?php
-            foreach($rows as $row){
-                echo '<tr><td>'.$row['nombreEvento'].'</td>';
-                echo '<td>'.$row['idOrganizador'].'</td>';
-                echo '<td>'.$row['localizacionEvento'].'</td>'; 
-                echo '<td>'.$row['minPrecio'].'</td>';
-                echo  '<td><img src="'.$row['path'].'" width=200 height=200></td></tr>';
-            }
-        ?>
-
-        </table>
+            
+            foreach($rows as $row){ 
+                ?>
+                    <div class="column element">
+                        <a href="http://google.com"> <span class="hyperspan"></span></a>
+                        <img src="<?php echo $row['path']; ?>" alt="Snow">
+                        <p class="precio">Desde <strong><?php echo $row['minPrecio'];?> </strong>Euros</p>
+                        <p class="nombreEvento">Evento: <?php echo $row['nombreEvento']; ?></p>
+                        <p class="nombreEvento">Organizador: <?php echo $row['nombre']; ?></p>
+                    </div>
+                <?php } ?>
     </body>
 </html>

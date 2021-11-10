@@ -24,3 +24,24 @@
     </div>
 </body>
 </html>
+
+
+
+<!doctype html>
+<html>
+    <head></head>
+    <body>
+        <div>
+            <?php
+            foreach($rows as $row){ ?>
+               <div class="row">
+                    <div class="column element">
+                        <a href="http://google.com"> <span class="hyperspan"></span></a>
+                        <img src="<?php echo $row['path']; ?>" alt="Snow">
+                        <p class="precio">Desde <?php echo $row['minPrecio'];?> Euros</p>
+                        <p class="nombreEvento">Desde <?php echo $row['nombreEvento']; ?> Euros</p>
+                    </div>
+                </div>
+                <?php } ?>
+    </body>
+</html>
