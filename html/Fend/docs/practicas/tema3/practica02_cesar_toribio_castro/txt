@@ -1,0 +1,8 @@
+/^[A-Z]{3}\d\d\d\d/g
+/^(VA|LE|SO|PA|SE|BU|ZA)-[A-Z]{3}\d\d\d\d/g
+/^\d{8}-(VA|LE|SO|PA|SE|BU|ZA)/g
+/^\d-\d{2}.\d{2}.\d{2}.\d{2}/g
+/\d{5}[A-Z]/g
+/(LV|LD|MO)-\d{5}/g
+/(978|979)-\d{2}-\d{2}-\d{2}-\d/g   
+
