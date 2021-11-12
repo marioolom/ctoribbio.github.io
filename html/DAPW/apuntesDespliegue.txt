@@ -117,3 +117,44 @@ Cambiamos de propietario la carpeta del usuario||| sudo chown -R ftp /var/ftp/us
 Activamos la directiva defaultroot y separamos la virgulilla de la linea 39 de proftp.conf
 Añadimos la directiva AuthUserFile        /etc/proftpd/passwd.virtuales a proftpd.conf
 Reiniciamos el servidor
+
+Crear un segundo FTP
+Creamos una carpeta en /var/ftp por ejemplo /var/ftp/servidor2
+Le cambiamos el usuario a ftp con chown 
+Descomentamos la linea de Include /etc/proftpd/virtuals.conf Linea 160
+Copiamos y pegamos la linea de la 10 a la 18 y las descomentamos menos la de TransferLog
+Cambiamos el nombre del servidor para saber a cual nos conectamos
+Cambiamos la directiva Default Root a la carpeta creada en la linea 122 de estos apuntes
+Añadir a /etc/hosts la ip del servidor y el nombre del servidor definido en virtuals.conf en
+proftpd - td5 Checkea la sintaxis de toda la configuracion 
+
+Limites FTP
+Con la etiqueta <limit comandoFTP > ponemos limites bien a una carpeta o host virtual a cualquier comando FTP 
+Vamos a añadir al final de la linea lo siguiente para denegar todos los LOGIN 
+      <Limit LOGIN>
+	      DenyAll
+            AllowUser kali
+      </Limit>
+Si queremos añadir cualquier directiva al servidor virtual tenemos que agregarlo al codigo de
+virtuals.conf que copiamos y pegamos anteriormente en estos pasos 
+Para permitir a un usuario concreto añadimos AllowUser username a la directiva anterior
+Para permitir usuarios anonimso añadimos esto a ftpd.conf:
+Anonymous ~>
+	User	ftp
+	Group	ftp
+	
+	UserAlias	anonymous ftp
+	
+	AnonRequirePassword	off
+	MaxClients	10
+	
+	<Directory *>
+		<Limit WRITE>
+			DenyAll
+		</Limit>
+	</Directory>
+</Anonymous>
+
+
+
+

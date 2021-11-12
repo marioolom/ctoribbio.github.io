@@ -1,0 +1,7 @@
+1
+22X- Conexion correctament
+120- Servidor espera x minutos
+331-Usuario Correcto pero esperando a la Contraseña
+550-No hay respuesta(Normalmente porque no se encuentra un recurso)
+5
+fpt://user:password@server:port

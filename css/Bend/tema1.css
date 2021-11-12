@@ -140,7 +140,8 @@ article a{
     
 }
 .menuPracs{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 4px;
 }
 h3{
@@ -150,11 +151,6 @@ h3{
 li a.pracsButton:hover{
     background-color: #1c313a;
     color:white;
-}
-#noEnun:hover{
-    background-color: #718792;
-    color:black;
-    cursor:default;
 }
 .practicas{
     padding:2px;

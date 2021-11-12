@@ -138,7 +138,8 @@ article a{
     
 }
 .menuPracs{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 4px;
 }
 h3{
