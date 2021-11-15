@@ -9,13 +9,13 @@ if (isset($_POST['but_submit'])) {
     $nombreEvento = mysqli_real_escape_string($con, $_POST['nombreEvento']);
     $descripcionEvento = mysqli_real_escape_string($con, $_POST['descripcionEvento']);
     $localizacionEvento = mysqli_real_escape_string($con, $_POST['localizacionEvento']);
-    $filepath = "./uploads/" . $_FILES["file"]["name"];
+    $filepath = "../uploads/" . $_FILES["file"]["name"];
     $sql_query = "INSERT INTO eventos(idOrganizador,nombreEvento,descripcionEvento,localizacionEvento,path) values
-    (" . $idOrganizador . ",'" . $nombreEvento . "','" . $descripcionEvento . "','" . $localizacionEvento ."','" .$filepath. "');";
-    if (mysqli_query($con, $sql_query)&& move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+    (" . $idOrganizador . ",'" . $nombreEvento . "','" . $descripcionEvento . "','" . $localizacionEvento . "','" . $filepath . "');";
+    if (mysqli_query($con, $sql_query) && move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
         header('location: confirmacion.php');
     } else {
-            echo "Error !!";
+        echo "Error !!";
     }
 }
 ?>

@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+  }
+html{
+    background-color: var(--mainColor);
+    --mainColor: #455a64;
+    --mainLightColor: #718792;
+    --mainDarkColor: #1c313a;
+    --secondaryColor: #ffb300;
+    --secondaryLightColor: #ffe54c;
+    --secondaryDarkColor : #c68400;
+}
+header{
+    background-color: var(--mainDarkColor);
+    width:20%;
+    padding: 12px;
+    margin: auto;
+    text-align: center;
+    font-size:24px;
+    color:white;
+}
+input[type="submit"] {
+	background: none;
+	color: white;
+  font-size:20px !important;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+nav{
+  display:inline-flexbox;
+  width: 60%;
+  margin: auto;
+  background-color: var(--mainDarkColor)
+}
+ul{
+width: 100%;
+padding:0px;
+}
+.navItem{
+  display: inline-block;
+  width:24.265%;
+  margin: auto;
+  text-align:center;
+}
+li{
+  display: inline-block;
+  
+}

@@ -35,15 +35,23 @@ function numeros(){
 }
 
 function comprobarVentana() {
-    if(ventana.closed==false){
-        alert("La ventana vacia esta abierta")
-    }else{
-        alert("La ventana vacia esta cerrada");
+    try{ 
+        if(ventana.closed==false){
+            alert("La ventana vacia esta abierta")
+        }else{
+            alert("La ventana vacia esta cerrada");
+        }
+    }catch(e){ 
+        alert("La ventana vacia esta cerrada")
     }
-    if(ventana2.closed==false){
-        alert("La ventana de Google esta abierta")
-    }else{
-        alert("La ventana de Google esta cerrada");
+    try{ 
+        if(ventana2.closed==false){
+            alert("La ventana de Google esta abierta")
+        }else{
+            alert("La ventana de Google esta cerrada");
+        }
+    }catch(e){ 
+        alert("La ventana de Google esta cerrada")
     }
 }
 var tiempo;
@@ -55,4 +63,7 @@ function contador5s(){
 }
 function pararContador(){
         clearInterval(tiempo);
+}
+function recargarPagina(){
+    location.reload();
 }

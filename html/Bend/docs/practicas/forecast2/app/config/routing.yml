@@ -1,0 +1,19 @@
+
+forecastSimple:
+    path: /forecast2/index
+    defaults: {_controller: AppBundle:Forecast:index}
+forecastParam:
+    path: /forecast2/{weather}
+    defaults: {_controller: AppBundle:Forecast:indexParam, weather: nublado}
+forecast2Param:
+    path: /forecast2/{weather}/{temp}
+    defaults: {_controller: AppBundle:Forecast:index2Params, weather: lluvioso, temp: 27}
+forecast_request_param:
+    path: /forecast2/indexRequest/{weather}/{temp}
+    defaults: {_controller: AppBundle:Forecast:indexRequest, weather: lluvioso, temp: 27}
+redirect_index:
+    path: /redirect/index
+    defaults: {_controller: AppBundle:Redirect:index}
+redirect_interna_index:
+    path: /redirectinterna/index
+    defaults: {_controller: AppBundle:Redirect:internalRedirect}

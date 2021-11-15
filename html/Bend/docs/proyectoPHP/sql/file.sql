@@ -4,34 +4,34 @@ CREATE DATABASE ventaentradas;
 
 CREATE TABLE users(
     username varchar(255) PRIMARY KEY,
-    password varchar(255),
-    nombre varchar(255),
-    apellidos varchar(255),
-    fechaNacimiento date,
-    tipoUsuario int(1)
+    password varchar(255) NOT NULL,
+    nombre varchar(255) NOT NULL,
+    apellidos varchar(255) NOT NULL,
+    fechaNacimiento date NOT NULL,
+    tipoUsuario int(1) NOT NULL
 );
 
 CREATE TABLE organizadores(
     idOrganizador int AUTO_INCREMENT PRIMARY KEY,
-    nombre varchar(64),
-    descripcion varchar(64),
-    codAcceso varchar(255)
+    nombre varchar(64) NOT NULL,
+    descripcion varchar(64) NOT NULL,
+    codAcceso varchar(255) NOT NULL
 );
 
 CREATE TABLE eventos(
     idEvento int AUTO_INCREMENT PRIMARY KEY,
-    idOrganizador int,
-    nombreEvento varchar(255),
-    descripcionEvento TEXT,
-    localizacionEvento varchar(64),
-    path varchar(255),
+    idOrganizador int NOT NULL,
+    nombreEvento varchar(255) NOT NULL,
+    descripcionEvento TEXT NOT NULL,
+    localizacionEvento varchar(64) NOT NULL,
+    path varchar(255) NOT NULL,
     FOREIGN KEY (idOrganizador) REFERENCES organizadores(idOrganizador) ON DELETE CASCADE
 );
 
 CREATE TABLE tickets(
     idTicket int AUTO_INCREMENT PRIMARY KEY,
-    idEvento int,
-    precioTicket int(3),
+    idEvento int NOT NULL,
+    precioTicket int(3) NOT NULL,
     username varchar(255),
     FOREIGN KEY (idEvento) REFERENCES eventos(idEvento) ON DELETE CASCADE,
     FOREIGN KEY (username) REFERENCES users(username)
@@ -40,8 +40,8 @@ CREATE TABLE tickets(
 CREATE TABLE cupones(
     idCupon int AUTO_INCREMENT PRIMARY KEY,
     username varchar(255),
-    codigoCupon varchar(64),
-    cuantia int(3)
+    codigoCupon varchar(64) NOT NULL,
+    cuantia int(3) NOT NULL
 );
 
 INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario) values
@@ -49,16 +49,6 @@ INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario
 
 INSERT INTO organizadores(nombre,descripcion,codAcceso) values 
     ("Fabrik Madrid", "Club de Musica Electronica","123");
-
-INSERT INTO eventos(idOrganizador,nombreEvento,descripcionEvento,localizacionEvento) values 
-    (1,"Code Aniversario","Aniversario techno evento","Humanes, Madrid"),
-    (1,"150 HeadHunterz","Hardcore","Humanes, Madrid");
-
-INSERT INTO tickets(idEvento,precioTicket,username) values
-    (1,20,null),
-    (1,20,null),
-    (2,30,null),
-    (2,30,null);
 
 INSERT INTO cupones(username, codigoCupon, cuantia) values
     (null,1,10),
