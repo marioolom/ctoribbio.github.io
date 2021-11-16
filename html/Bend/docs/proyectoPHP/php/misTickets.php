@@ -5,7 +5,7 @@ if (!isset($_SESSION['uname'])) {
     header('Location: index.php');
 }
 
-$sql_query = "select eventos.*, tickets.username,tickets.idTicket, count(tickets.idTicket) AS numeroTickets from eventos inner join tickets on tickets.idEvento=eventos.idEvento where username='" . $_SESSION['uname'] . "' GROUP BY eventos.idEvento;";
+$sql_query = "select eventos.*, tickets.username, count(tickets.idTicket) AS numeroTickets from eventos inner join tickets on tickets.idEvento=eventos.idEvento where username='" . $_SESSION['uname'] . "' GROUP BY eventos.idEvento;";
 $result = mysqli_query($con, $sql_query);
 while ($row = $result->fetch_array()) {
     $rows[] = $row;
@@ -59,7 +59,7 @@ if (isset($_POST['but_logout'])) {
         foreach ($rows as $row) {
         ?>
             <div class="column element">
-                <a href="confirmarCompra.php?idTicket=<?php echo $row['idTicket']; ?>"> <span class="hyperspan"></span></a>
+                <a href="confirmarCompra.php?idEvento=<?php echo $row['idEvento']; ?>"> <span class="hyperspan"></span></a>
                 <img src="<?php echo $row['path']; ?>" alt="Snow">
                 <p class="nombreEvento"><?php echo $row['nombreEvento']; ?></p>
                 <p class="precio">Tienes <strong><?php echo $row['numeroTickets']; ?> </strong>tickets para este evento</p>

@@ -114,7 +114,7 @@ Pegamos este comando
 sudo ftpasswd --passwd --name usuario1 --home /var/ftp/usuario1 --uid 135 --shell /bin/false --file /etc/proftpd/passwd.virtuales
 Cambiamos los permisos al archivo passwd.virtuales a 640||| sudo chmod 640 /etc/proftpd/passwd.virtuales 
 Cambiamos de propietario la carpeta del usuario||| sudo chown -R ftp /var/ftp/usuario1
-Activamos la directiva defaultroot y separamos la virgulilla de la linea 39 de proftp.conf
+Activamos la directiva defaultroot y separamos la virgulilla de la linea 39 de proftpd.conf
 Añadimos la directiva AuthUserFile        /etc/proftpd/passwd.virtuales a proftpd.conf
 Reiniciamos el servidor
 
@@ -139,7 +139,7 @@ Si queremos añadir cualquier directiva al servidor virtual tenemos que agregarl
 virtuals.conf que copiamos y pegamos anteriormente en estos pasos 
 Para permitir a un usuario concreto añadimos AllowUser username a la directiva anterior
 Para permitir usuarios anonimso añadimos esto a ftpd.conf:
-Anonymous ~>
+<Anonymous ~>
 	User	ftp
 	Group	ftp
 	
@@ -155,6 +155,20 @@ Anonymous ~>
 	</Directory>
 </Anonymous>
 
+Directivas FTP Server
+Display sets the file to serve on given action 
+DisplayLogin Set the file to display on login
+ServerName Configure the name displayed to connecting users
+ServerType Set the mode proftpd runs in
+DefaultRoot Sets default chroot directory
+MaxClients Limits the number of users that can connect
+UserAlias Alias a username to a system user
+http://www.proftpd.org/docs/directives/linked/by-name.html
 
-
-
+FileZilla Server en Windows
+Arrancar el servidor de FileZilla
+netstat -a para comprobar si el servidor de filezzilla esta arrancado buscando el puerto 21 
+Para conectar al servidor y configurarlo ponemos en la IP 127.0.0.1 y el puerto 14148
+Una vez en la pantalla, haremos click en Server->Configurar
+Añadimos una fila con nuestra IP, el puerto 21 y la primera de las tres opciones del desplegable
+Si todo ha salido bien y hacemos netstat -a saldria nuestra IP y el puerto 21 a la escucha

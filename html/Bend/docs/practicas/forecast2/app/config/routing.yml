@@ -17,3 +17,20 @@ redirect_index:
 redirect_interna_index:
     path: /redirectinterna/index
     defaults: {_controller: AppBundle:Redirect:internalRedirect}
+get_temp:
+    path: /temperature/{id}
+    defaults: {_controller: AppBundle:Temperature:get}
+    requirements: 
+        id: \d+
+check_temp: 
+    path: /temperature/check
+    defaults: {_controller: AppBundle:Temperature:check}
+get_all:
+    path: /temperature/all
+    defaults: {_controller: AppBundle:Temperature:getAll}
+location_index: 
+    path: /location/index
+    defaults: {_controller: AppBundle:Location:index}
+location_json:
+    path: /location/json
+    defaults: {_controller: AppBundle:Location:indexJson}
