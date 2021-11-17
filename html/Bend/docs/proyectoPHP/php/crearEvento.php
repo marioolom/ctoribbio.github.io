@@ -1,11 +1,11 @@
 <?php
 include "config.php";
-if (!isset($_SESSION['uname'])) {
+if (!isset($_SESSION['idOrg'])) {
     header('Location: index.php');
 }
 $err = "";
 if (isset($_POST['but_submit'])) {
-    $idOrganizador = mysqli_real_escape_string($con, $_POST['idOrganizador']);
+    $idOrganizador = $_SESSION['idOrg'];
     $nombreEvento = mysqli_real_escape_string($con, $_POST['nombreEvento']);
     $descripcionEvento = mysqli_real_escape_string($con, $_POST['descripcionEvento']);
     $localizacionEvento = mysqli_real_escape_string($con, $_POST['localizacionEvento']);
@@ -31,9 +31,6 @@ if (isset($_POST['but_submit'])) {
         <div id="div_login">
             <h1>Crear Nuevo Evento</h1>
             <?php echo $err ?>
-            <div>
-                <input type="text" class="textbox" id="txt_uname" name="idOrganizador" placeholder="ID Organizador" />
-            </div>
             <div>
                 <input type="text" class="textbox" id="txt_uname" name="nombreEvento" placeholder="Nombre Evento" />
             </div>

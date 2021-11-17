@@ -18,7 +18,7 @@ if (isset($_POST['but_submit'])) {
 
         if ($count > 0) {
             $_SESSION['idOrg'] = $idOrg;
-            header('Location: home.php');
+            header('Location: homeOrganizador.php');
         } else {
             $err = "ID Organizador o codigo de acceso incorrectos";
         }

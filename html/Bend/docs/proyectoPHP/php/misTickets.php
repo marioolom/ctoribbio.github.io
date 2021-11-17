@@ -4,12 +4,18 @@ include "config.php";
 if (!isset($_SESSION['uname'])) {
     header('Location: index.php');
 }
+$bandera=true;
 
 $sql_query = "select eventos.*, tickets.username, count(tickets.idTicket) AS numeroTickets from eventos inner join tickets on tickets.idEvento=eventos.idEvento where username='" . $_SESSION['uname'] . "' GROUP BY eventos.idEvento;";
 $result = mysqli_query($con, $sql_query);
-while ($row = $result->fetch_array()) {
-    $rows[] = $row;
+if(mysqli_num_rows($result)!==0){
+    while ($row = $result->fetch_array()) {
+        $rows[] = $row;
+    }
+}else{
+    $bandera=false;
 }
+
 
 if (isset($_POST['but_logout'])) {
     session_destroy();
@@ -55,16 +61,18 @@ if (isset($_POST['but_logout'])) {
     </nav>
     <div class="container">
         <?php
-
+        if($bandera==false){
+            echo "No tienes Tickets";
+        }else{
         foreach ($rows as $row) {
         ?>
             <div class="column element">
-                <a href="confirmarCompra.php?idEvento=<?php echo $row['idEvento']; ?>"> <span class="hyperspan"></span></a>
+                <a href="verTicket.php?idEvento=<?php echo $row['idEvento']; ?>"> <span class="hyperspan"></span></a>
                 <img src="<?php echo $row['path']; ?>" alt="Snow">
                 <p class="nombreEvento"><?php echo $row['nombreEvento']; ?></p>
                 <p class="precio">Tienes <strong><?php echo $row['numeroTickets']; ?> </strong>tickets para este evento</p>
             </div>
-        <?php } ?>
+        <?php }} ?>
 </body>
 
 </html>

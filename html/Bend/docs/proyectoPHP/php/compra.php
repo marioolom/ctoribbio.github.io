@@ -7,9 +7,17 @@ INNER JOIN tickets ON eventos.idEvento=tickets.idEvento inner join organizadores
 WHERE precioTicket IN (SELECT min(precioTicket) FROM tickets WHERE username is NULL GROUP BY idEvento) AND username is null
 GROUP BY tickets.idEvento;";
 $result = mysqli_query($con, $sql_query);
-while ($row = $result->fetch_array()) {
-    $rows[] = $row;
+$bandera=true;
+if(mysqli_num_rows($result)!==0){
+    while ($row = $result->fetch_array()) {
+        $rows[] = $row;
+    }
+}else{
+    $bandera=false;
 }
+
+
+
 
 if (isset($_POST['but_logout'])) {
     session_destroy();
@@ -54,7 +62,11 @@ if (isset($_POST['but_logout'])) {
     </nav>
     <div class="container">
         <?php
+        if($bandera==false){
+            echo "No hay tickets a la venta";
+        }else{
 
+        
         foreach ($rows as $row) {
         ?>
             <div class="column element">
@@ -64,7 +76,7 @@ if (isset($_POST['but_logout'])) {
                 <p class="nombreEvento"><?php echo $row['nombreEvento']; ?></p>
                 <p class="nombreEvento"><?php echo $row['nombre']; ?></p>
             </div>
-        <?php } ?>
+        <?php }} ?>
 </body>
 
 </html>

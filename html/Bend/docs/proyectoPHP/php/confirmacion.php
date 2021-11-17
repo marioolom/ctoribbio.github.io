@@ -12,7 +12,7 @@
     <?php
 
     echo "Se ha realizado la operacion correctamente, ahora se le redijira a la pagina principal<br>";
-    echo "Si no se le redirije automaticamente haga click en el siguiente enlace <a href='home.php'>Redirigir<a>";
+    echo "Si no se le redirije automaticamente haga click en el siguiente enlace <a href='homeOrganizador.php'>Redirigir<a>";
 
 
 

@@ -12,6 +12,6 @@ if (isset($_POST['but_cancelar'])) {
 }
 $idTicket = $_GET['idEvento'];
 
-
+echo $idTicket;
 
 ?>

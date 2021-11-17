@@ -1,7 +1,7 @@
 <?php
 include "config.php";
-if (!isset($_SESSION['uname'])) {
-    header('Location: index.php');
+if (!isset($_SESSION['idOrg'])) {
+    header('Location: loginOrganizador.php');
 }
 $sql_query = "select * from eventos";
 $result = mysqli_query($con, $sql_query);
