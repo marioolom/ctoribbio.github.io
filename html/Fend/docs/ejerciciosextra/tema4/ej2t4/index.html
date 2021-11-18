@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type"text/javascript" src="JS/script.js"></script>
-    <title>Document</title>
+    <title>Documento</title>
 </head>
 <body>
+    <div id="contenedorFormularios">
     <p>Formulario 1</p>
-    <form id="formulario1">
-            <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Usuario" />
-            <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Contraseña"/>
-            <input type="submit" value="Iniciar Sesion" name="but_submit" id="but_submit" />
+    <form id="formulario1" action="" method="post">
+            <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Usuario" value="Usuario" />
+            <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Contraseña" value="Contraseña" />
+            <input type="submit" value="Iniciar Sesion" name="enviar" id="but_submit1" />
     </form>
     <p>Formulario 2</p>
-    <form id="formulario2">
-        <input type="text" class="textbox" id="txtNombre" name="txtNombre" placeholder="Nombre" />
-        <input type="text" class="textbox" id="txtApellidos" name="txtApellidos" placeholder="Apellidos"/>
+    <form id="formulario2" action="" method="post">
+        <input type="text" class="textbox" id="txtNombre" name="txtNombre" placeholder="Nombre" value="Nombre" />
+        <input type="text" class="textbox" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" value="Apellidos" />
         <input type="date" class="fecha" id="fechaN" name="fechaN" placeholder="Fecha de Nacimiento"/>
-        <input type="submit" value="Iniciar Sesion" name="but_submit" id="but_submit" />
+        <input type="submit" value="Iniciar Sesion" name="enviar" id="but_submit2" />
     </form>
+    </div>
+    <div id="contenedorImagenes">
+        <img src="images/rino.jpg"        alt="Imagen 1"        title="Imagen 1" class="verde">
+        <img src="images/background2.jpg" alt="Imagen 2" title="Imagen 2">
+        <img src="images/background3.jpg" alt="Imagen 3" title="Imagen 3">
+    </div>
+    <div id="contenedorEnlaces">
+        <a href="http://iesriberadecastilla.centros.educa.jcyl.es/sitio/">Enlace Ribera</a>
+        <a href="https://marca.com">Enlace Marca</a>
+        <a href="http://elpais.es">Enlace El Pais</a>
+    </div>
+    <div id="contenedorParrafos">
+        <p id="uno">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet arcu pellentesque, maximus mi at, lobo</p>
+        <p id="parrafo2"> Pellentesque enim quam, euismod non rhoncus sed, volutpat in sem. Nulla consectetur eros eu ipsum aliquet rhoncus.  </p>
+        <p id="parrafo3"> Integer ultrices lacinia mi id fermentum. Fusce fringilla ex eu ante facilisis, pharetra consectetur metus volutpat.</p>
+    </div>
+    <div id="contenedorBotones">
+        <button id="boton1" class="verde">Boton 1</button>
+        <button id="boton2">Boton 2</button>
+        <button id="boton3">Boton 3</button>
+        <button id="boton4">Boton 4</button>
+    </div>
+    <script type"text/javascript" src="JS/script.js"></script>
 </body>
+
 </html>

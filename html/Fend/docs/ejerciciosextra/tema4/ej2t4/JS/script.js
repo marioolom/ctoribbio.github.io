@@ -1,69 +1,44 @@
-var ventana;
-var ventana2;
-function abrirVentana(){
-   ventana= open("","",height=350,width=400);
+// Ejercicio 1
+alert("Ejercicio 1: Mostrar informacion del document");
+
+var cadena="Titulo del Documento: "+document.title+"\nUltima Fecha de Modificacion: "+document.lastModified+"\nDominio: "+document.domain+"\nURL Completa: "+document.URL;
+alert(cadena);
+
+//Ejercicio 2
+alert("Ejercicio 2: Mostrar informacion de atributos");
+
+var x= document.getElementsByTagName("form");
+console.log("Hay "+x.length+" formularios en el documento HTML ");
+for(var i=0; i<x.length; i++){
+    console.log("Hay "+x[i].elements.length+" elementos en el formulario "+(i+1));
+    console.log(x[i]);
 }
 
-function cerrarVentana(){
-    ventana.close();
+x=document.getElementsByTagName("img");
+console.log("Hay "+x.length+" imagenes en el documento HTML ");
+for( i=0; i<x.length; i++){
+    console.log("Atributo src de la imagen "+(i+1)+": "  + x[i].getAttribute("src"));
+    console.log("Atributo alt de la imagen "+(i+1)+": "  + x[i].getAttribute("alt"));
+    console.log("Atributo title de la imagen "+(i+1)+": "+ x[i].getAttribute("title"));
 }
 
-function abrirGoogle(){
-    ventana2= open("https://www.google.com/","",height=350,width=400);
-}
-function cerrarGoogle(){
-    ventana2.close();
-}
-
-function numeros(){
-    var introducidos=new Array();
-    for( var i=0;i<3;i++){
-       var bool= confirm("Quieres introducir un numero?");
-        if(bool){
-            var num=prompt("Introduce un numero?");
-            while(isNaN(num)){
-                var num=prompt("Solo introducir numeros?");
-            }
-            introducidos.push(num);
-            
-        }
-
-    }
-    alert("El boton 'Confirmar' fue pulsado: "+introducidos.length+" veces");
-    alert("El boton 'Cancelar' fue pulsado: "+(3-introducidos.length)+" veces");
-    alert(introducidos.join());
+x=document.getElementsByTagName("a");
+console.log("Hay "+x.length+" enlaces en el documento HTML ");
+for( i=0; i<x.length; i++){
+    console.log("Atributo href del enlace "+(i+1)+": "  + x[i].getAttribute("src"));
 }
 
-function comprobarVentana() {
-    try{ 
-        if(ventana.closed==false){
-            alert("La ventana vacia esta abierta")
-        }else{
-            alert("La ventana vacia esta cerrada");
-        }
-    }catch(e){ 
-        alert("La ventana vacia esta cerrada")
-    }
-    try{ 
-        if(ventana2.closed==false){
-            alert("La ventana de Google esta abierta")
-        }else{
-            alert("La ventana de Google esta cerrada");
-        }
-    }catch(e){ 
-        alert("La ventana de Google esta cerrada")
-    }
+x=document.getElementsByTagName("p");
+console.log("Hay "+x.length+" enlaces en el documento HTML ");
+for( i=0; i<x.length; i++){
+    console.log("Texto del parrafo "+(i+1)+": "  + x[i].textContent);
 }
-var tiempo;
-function escribir(){
-    alert("Han pasado 5 segundos ");
-}
-function contador5s(){
-        tiempo=setInterval(escribir,5000);
-}
-function pararContador(){
-        clearInterval(tiempo);
-}
-function recargarPagina(){
-    location.reload();
+
+x=document.getElementById('uno');
+console.log(x);
+
+x=document.getElementsByClassName("verde");
+console.log("Hay "+x.length+" enlaces en el documento HTML con la clase verde");
+for( i=0; i<x.length; i++){
+    console.log(x[i]);
 }
