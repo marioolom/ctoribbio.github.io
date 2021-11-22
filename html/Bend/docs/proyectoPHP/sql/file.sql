@@ -38,9 +38,8 @@ CREATE TABLE tickets(
 );
 
 CREATE TABLE cupones(
-    idCupon int AUTO_INCREMENT PRIMARY KEY,
+    codigoCupon varchar(64) PRIMARY KEY,
     username varchar(255),
-    codigoCupon varchar(64) NOT NULL,
     cuantia int(3) NOT NULL
 );
 
@@ -51,6 +50,5 @@ INSERT INTO organizadores(nombre,descripcion,codAcceso) values
     ("Fabrik Madrid", "Club de Musica Electronica","123");
 
 INSERT INTO cupones(username, codigoCupon, cuantia) values
-    (null,1,10),
-    (null,1,10),
-    (null,1,10);
+    ("global","navidad2020","10"),
+    ("ctoribbio","123","15");

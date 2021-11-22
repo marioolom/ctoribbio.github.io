@@ -30,6 +30,7 @@ if (isset($_POST['but_confirmar'])) {
         echo "Error: ";
     }
 }
+if(isset($_POST))
 
 ?>
 
@@ -44,6 +45,7 @@ if (isset($_POST['but_confirmar'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/confirmar.css">
 </head>
 
 <body>
@@ -65,6 +67,13 @@ if (isset($_POST['but_confirmar'])) {
                 
             </tr>
         </table>
+        <div id="cupones">
+            <form>
+                <input type="text" name="cupon" placeholder="Codigo de Descuento">
+                <input type="submit" name="enviarCupon"value="Introducir cupón">
+            </form>
+        </div>
+        
         <button type="submit" value="" name="but_confirmar" id="but_submit">Confirmar Compra</button>
         <button type="submit" value="" name="but_cancelar" id="but_submit">Cancelar Compra</button>
     </form>

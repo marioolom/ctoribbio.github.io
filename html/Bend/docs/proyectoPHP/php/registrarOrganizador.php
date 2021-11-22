@@ -20,7 +20,7 @@ if (isset($_POST['but_submit'])) {
             $sql_query = "INSERT INTO organizadores(idOrganizador,codAcceso,nombre,descripcion)values
             (" . $idOrg . ",'" . $codAcceso . "','" . $nombre . "','" . $descripcion . "');";
             if (mysqli_query($con, $sql_query)) {
-                header('Location: index.php');
+                header('Location: homeadmin.php');
             } else {
                 $err = "Dato no introducido";
                 echo "<p>" . $sql_query . "</p>";
@@ -61,7 +61,7 @@ if (isset($_POST['but_submit'])) {
                     <input type="text" class="textbox" id="txt_descrip" name="txt_descrip" placeholder="Descripcion" />
                 </div>
                 <div>
-                    <input type="submit" value="Iniciar Sesion" name="but_submit" id="but_submit" />
+                    <input type="submit" value="Registrar" name="but_submit" id="but_submit" />
                 </div>
             </div>
         </form>
