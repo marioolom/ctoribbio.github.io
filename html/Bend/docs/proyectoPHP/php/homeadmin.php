@@ -13,7 +13,7 @@ $result0 = mysqli_query($con, $sql_query0);
 while ($row0 = $result0->fetch_array()) {
     $rows0[] = $row0;
 }
-$sql_query1 = "SELECT eventos.nombreEvento,organizadores.nombre, COUNT(tickets.idTicket)
+$sql_query1 = "SELECT eventos.idEvento,eventos.nombreEvento,organizadores.nombre, COUNT(tickets.idTicket)
                 from eventos 
                 inner join organizadores on eventos.idOrganizador = organizadores.idOrganizador 
                 inner join tickets on eventos.idEvento= tickets.idEvento 
@@ -21,13 +21,27 @@ $sql_query1 = "SELECT eventos.nombreEvento,organizadores.nombre, COUNT(tickets.i
                 GROUP BY tickets.idEvento;";
 
 $result1 = mysqli_query($con, $sql_query1);
-$bandera1=true;
+echo $sql_query1;
+$bandera=true;
 if(mysqli_num_rows($result1)!==0){
     while ($row1 = $result1->fetch_array()) {
         $rows1[] = $row1;
     }
 }else{
-    $bandera1=false;
+    $bandera=false;
+}
+if(isset($_GET["idEvento"])){
+    borrarEvento();
+}
+function borrarEvento(){
+    include "config.php";
+    $sql_query="DELETE FROM eventos WHERE idEvento= ".$_GET["idEvento"].";";
+    if( mysqli_query($con, $sql_query)){
+       header('Location: homeadmin.php');
+    }else{
+        echo "Errors";
+        echo $sql_query;
+    }
 }
 ?>
 
@@ -48,16 +62,23 @@ if(mysqli_num_rows($result1)!==0){
                 <th>Nombre del Evento</th>
                 <th>Organizador</th>
                 <th>Numero de Entradas</th>
-                <th>Numero de Entradas vendidas
+                <th>Numero de Entradas vendidas</th>
+                <th>Borrar</th>
             <tr>
-            <?php foreach ($rows1 as $row1) { ?>
+            <?php
+            if($bandera==true){
+                foreach ($rows1 as $row1) {
+              ?>
             <tr>
-                <td><?php echo $row1[0]?></td>
                 <td><?php echo $row1[1]?></td>
                 <td><?php echo $row1[2]?></td>
+                <td><?php echo $row1[3]?></td>
                 <td>1</td>
+                <td><a href="homeadmin.php?idEvento=<?php echo $row1[0]?>">Borrar</a></td>
             </tr>
-            <?php } ?>
+            <?php }}else{
+                echo "<p id='errorMessage'>No hay Eventos programados aun</p>";
+            } ?>
         </table>
     </main>
     <aside>
