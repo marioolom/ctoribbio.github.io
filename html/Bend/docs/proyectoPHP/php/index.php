@@ -1,6 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Signin Template for Bootstrap</title>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="../css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <div>
+        <div class="align-left">
+            <form class="form-signin m-5 float-center " action="" method="post">
+                <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mr-5 ml-5 mb-3 font-weight-normal" id="h1">Inicio de Sesion</h1>
+                <label for="inputEmail" class="sr-only">Usuario</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" name="txt_uname" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="txt_pwd" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="but_submit" id="btnSignIn">Iniciar Sesion</button>
+            </form>
+        </div>
+        <div class="left align-bottom mt-4">
+            <a href="loginOrganizador.php"><button class="btn btn-primary">Login Organizadores</button></a>
+        </div>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </div>
+</body>
+
+</html>
 <?php
 include "config.php";
-$err = "";
+
 
 if (isset($_POST['but_submit'])) {
 
@@ -17,49 +54,18 @@ if (isset($_POST['but_submit'])) {
         $count = $row['cntUser'];
 
         if ($count > 0) {
-            if($row['tipoUsuario']==1){
+            if ($row['tipoUsuario'] == 1) {
                 $_SESSION['uname'] = $uname;
                 header('Location: homeadmin.php');
-            }else{
+            } else {
                 $_SESSION['uname'] = $uname;
                 header('Location: home.php');
             }
-            
         } else {
-            $err = "Usuario y contraseña incorrectos";
+            echo '<script>loginError()</script>';
         }
     } else {
-        $err = "No se permiten campos vacios ";
+        echo '<script>loginError()</script>';
     }
 }
 ?>
-<html>
-
-<head>
-    <title>Create simple login page with PHP and MySQL</title>
-    <link href="../css/login.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-    <div class="container">
-        <form method="post" action="">
-            <div id="div_login">
-                <h1>Login</h1>
-                <p id="errorMessage"><?php echo $err ?></p>
-                <div>
-                    <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Usuario" />
-                </div>
-                <div>
-                    <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Contraseña" />
-                </div>
-                <div>
-                    <input type="submit" value="Iniciar Sesion" name="but_submit" id="but_submit" />
-                </div>
-                <p>No tienes cuenta? <a href="./registro.php">Registrate Ahora!</a></p>
-            </div>
-        </form>
-    </div>
-    <p>Eres un organizador? <a href="./loginOrganizador.php">Inicia Sesion aquí</a></p>
-</body>
-
-</html>

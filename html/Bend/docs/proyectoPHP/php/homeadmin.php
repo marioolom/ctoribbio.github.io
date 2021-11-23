@@ -135,12 +135,16 @@ if (isset($_POST['but_logout'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 </head>
 <header>
     <h1>Panel de Administracion<h1>
-        <form method='post' action="">
-            <input type="submit" value="Logout" name="but_logout">
-        </form>
+        <div class=" nav justify-content-end">
+            <form method='post' action="">
+                <input type="submit" class="btn btn-primary" value="Logout" name="but_logout">
+            </form>
+        </div>
 </header>
 <body>
     <main>
@@ -151,16 +155,16 @@ if (isset($_POST['but_logout'])) {
             if($bandera==true){
                 foreach ($rows1 as $row1) {
               ?>
-        <table border="2">
+        <table border="2" class="table">
             <tr>
-                <th>Nombre del Evento</th>
-                <th>Organizador</th>
-                <th>Numero de Entradas</th>
-                <th>Numero de Entradas vendidas</th>
-                <th>Borrar</th>
+                <th scope="col">Nombre del Evento</th>
+                <th scope="col">Organizador</th>
+                <th scope="col">Numero de Entradas</th>
+                <th scope="col">Numero de Entradas vendidas</th>
+                <th scope="col">Borrar</th>
             <tr>
             <tr>
-                <td><?php echo $row1[1]?></td>
+                <td scope="row"><?php echo $row1[1]?></td>
                 <td><?php echo $row1[2]?></td>
                 <td><?php echo $row1[3]?></td>
                 <td>1</td>
@@ -183,9 +187,9 @@ if (isset($_POST['but_logout'])) {
         } ?>
         <?php
             if($bandera2==true){
-                foreach ($rows2 as $row2) {
+                
               ?>
-        <table border="2">
+        <table border="2" class="table">
             <tr>
                 <th>Nombre de Usuario</th>
                 <th>Nombre</th>
@@ -193,7 +197,7 @@ if (isset($_POST['but_logout'])) {
                 <th>Fecha de Nacimiento</th>
                 <th>Borrar</th>
             <tr>
-            
+            <?php foreach ($rows2 as $row2) { ?>
             <tr>
                 <td><?php echo $row2[0]?></td>
                 <td><?php echo $row2[2]?></td>
@@ -211,9 +215,9 @@ if (isset($_POST['but_logout'])) {
         <a href="registrarOrganizador.php"><strong>Registrar Organizador</strong></a>
         <?php
             if($bandera3==true){
-                foreach ($rows3 as $row3) {
+                
               ?>
-        <table border="2">
+        <table border="2" class="table">
             <tr>
                 <th>ID Organizador</th>
                 <th>Nombre del Organizador</th>
@@ -221,7 +225,7 @@ if (isset($_POST['but_logout'])) {
                 <th>Fecha de Nacimiento</th>
                 <th>Borrar</th>
             <tr>
-            
+            <?php foreach ($rows3 as $row3) {?>
             <tr>
                 <td><?php echo $row3[0]?></td>
                 <td><?php echo $row3[1]?></td>
@@ -240,18 +244,18 @@ if (isset($_POST['but_logout'])) {
         <a href="crearCupon.php"><strong>Crear un nuevo codigo de descuento</strong></a>
         <?php
             if($bandera4==true){
-                foreach ($rows4 as $row4) {
+                
               ?>
-        <table border="2">
+        <table border="2" class="table">
             <tr>
                 <th>Codigo del cupon</th>
                 <th>Cuantía</th>
                 <th>Borrar</th>
             <tr>
-            
+            <?php foreach ($rows4 as $row4) {?>
             <tr>
                 <td><?php echo $row4[0]?></td>
-                <td><?php echo $row4[2]?></td>
+                <td><?php echo $row4[2]?>€</td>
                 <td><a href="homeadmin.php?codCupon=<?php echo $row4[0]?>">Borrar</a></td>
             </tr>
             <?php }

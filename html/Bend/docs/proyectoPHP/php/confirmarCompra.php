@@ -30,7 +30,21 @@ if (isset($_POST['but_confirmar'])) {
         echo "Error: ";
     }
 }
-if(isset($_POST))
+$bandera=false;
+if(isset($_POST['enviarCupon'])){
+    $sql_query3="SELECT * FROM cupones WHERE codigoCupon='".$_POST['cupon']."';";
+    echo $sql_query3;
+    $result3=mysqli_query($con,$sql_query3);
+    if(mysqli_num_rows($result3)>0){
+        while ($row3 = $result3->fetch_array()) {
+            $rows3[] = $row3;
+        }
+        $cuantia=$rows3[0][2];
+        $bandera=true;
+    }else{
+        $bandera=false;
+    }
+}
 
 ?>
 
@@ -51,27 +65,36 @@ if(isset($_POST))
 <body>
     <form method='post' action="">
         <p>Estas seguro que quieres comprar un Ticket para el evento <strong><?php echo $nombreEvento;?></strong>?</p>
-        <img src="<?php echo $path; ?>"width=25% height=25% alt="Imagen del eevnto" border></img><br>
-        <table border="2px">
+        <img src="<?php echo $path; ?>"width=25% height=25% alt="Imagen del evnto"></img><br>
+        <table border="2" cellspacing="0" cellpadding="2">
             <tr>
                 <th>Precio</th>
+                <td><?php echo $precio; ?>€</td>
+            </tr>
+            <tr>
                 <th>Gastos de Gestion</th>
+                <td><?php echo ($precio*0.1);?>€</td>
             </tr>
+            <?php if($bandera==true){ ?>
             <tr>
-                <td><?php echo $precio; ?>
-                <td><?php echo ($precio*0.1);?>
-            </tr>
+                <th>Descuento</th>
+                <?php echo "<td>".$cuantia."%</td>";?>
+            </tr><?php } ?>
             <tr>
-                <td><strong>TOTAL</strong></td>
-                <td><?php echo ($precio+($precio*0.1)); ?></td>
+                <th>TOTAL</th>
+                <td><?php if($bandera==true){
+                    echo ($precio+($precio*0.1))-($precio+($precio*0.1))*($cuantia/100);
+                 }else{
+                    echo ($precio+($precio*0.1));
+                 } ?>€</td>
                 
             </tr>
         </table>
         <div id="cupones">
-            <form>
+            <form method="post" action="">
                 <input type="text" name="cupon" placeholder="Codigo de Descuento">
-                <input type="submit" name="enviarCupon"value="Introducir cupón">
-            </form>
+                <input type="submit" name="enviarCupon" value="Introducir cupón">
+        
         </div>
         
         <button type="submit" value="" name="but_confirmar" id="but_submit">Confirmar Compra</button>

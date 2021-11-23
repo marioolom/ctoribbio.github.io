@@ -1,3 +1,6 @@
 #cupones{
     float: right;
 }
+td, th{
+text-align: left;
+}

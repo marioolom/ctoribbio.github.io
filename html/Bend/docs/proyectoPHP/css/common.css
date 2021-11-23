@@ -54,3 +54,16 @@ li{
   color:red !important; 
   font-weight: bold;
 }
+
+.centrado{
+  float:center;
+}
+.fondoazul{
+  background-color:lightblue;
+}
+.bordenegro{
+  border:2px solid black;
+}
+.ancho{
+  width:80%;
+}
