@@ -43,7 +43,7 @@ if (isset($_POST['but_submit'])) {
 
     if ($idOrg != "" && $codAcceso != "") {
 
-        $sql_query = "select count(*) as cntOrg from organizadores where idOrganizador=" . $idOrg . " and codAcceso='" . $codAcceso . "';";
+        $sql_query = "select count(*) as cntOrg from organizadores where idOrganizador=" . $idOrg . " and codAcceso=MD5('" . $codAcceso . "');";
         $result = mysqli_query($con, $sql_query);
         $row = mysqli_fetch_array($result);
 

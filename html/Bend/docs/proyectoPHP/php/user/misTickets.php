@@ -33,8 +33,8 @@ if (isset($_POST['but_logout'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Fever</a>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="./index.php">Fever</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,21 +57,31 @@ if (isset($_POST['but_logout'])) {
             </form>
         </div>
     </nav>
-    <div class="container">
-        <?php
-        if ($bandera == false) {
-            echo "No tienes Tickets";
-        } else {
-            foreach ($rows as $row) {
-        ?>
-                <div class="column element">
-                    <a href="verTicket.php?idEvento=<?php echo $row['idEvento']; ?>"> <span class="hyperspan"></span></a>
-                    <img src="<?php echo $row['path']; ?>" alt="Snow" class="img-thumbnail">
-                    <p class="nombreEvento"><?php echo $row['nombreEvento']; ?></p>
-                    <p class="precio">Tienes <strong><?php echo $row['numeroTickets']; ?> </strong>tickets para este evento</p>
-                </div>
-        <?php }
-        } ?>
+    <div class="container w-75">
+        <div class="row d-flex justify-content-space around">
+            <?php
+            if ($bandera == false) {
+                echo "No hay tickets a la venta";
+            } else {
+
+                foreach ($rows as $row) {
+            ?>
+                    <div class="card imagen">
+                        <img class="card-img-top ocupar-card" src="<?php echo $row['path']; ?>" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['nombreEvento']; ?>.-</h5>
+                            <p class="card-text">Tienes <?php echo $row['numeroTickets']; ?> para este evento</p>
+                            <p class="card-text"><?php echo $row['precio']; ?></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="verTicket.php?idEvento=<?php echo $row['idEvento']; ?>" class="btn btn-primary stretched-link">Ver Ticket</a>
+                        </div>
+                    </div>
+
+            <?php }
+            } ?>
+        </div>
+    </div>
         <script>window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')</script>
          <script src="../../js/popper.min.js"></script>
         <script type="text/javascript" src="../../js/bootstrap.js"></script>

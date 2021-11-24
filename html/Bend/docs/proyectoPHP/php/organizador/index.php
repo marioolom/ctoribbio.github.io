@@ -8,7 +8,11 @@ if (isset($_POST['but_logout'])) {
     session_destroy();
     header('Location: ../index.php');
 }
-$sql_query = "SELECT eventos.idEvento, eventos.nombreEvento,eventos.localizacionEvento,COUNT(tickets.idTicket) AS total, SUM(CASE WHEN tickets.username IS NULL THEN 0 ELSE 1 END) as vendidas FROM tickets RIGHT JOIN eventos on tickets.idEvento=eventos.idEvento WHERE eventos.idOrganizador=1 GROUP BY eventos.idEvento;";
+$sql_query = "SELECT eventos.idEvento, eventos.nombreEvento,eventos.localizacionEvento,COUNT(tickets.idTicket) AS total, SUM(CASE WHEN tickets.username IS NULL THEN 0 ELSE 1 END) as vendidas,eventos.fecha
+                FROM tickets 
+                RIGHT JOIN eventos on tickets.idEvento=eventos.idEvento 
+                WHERE eventos.idOrganizador=".$_SESSION['idOrg']." 
+                GROUP BY eventos.idEvento;";
 $result = mysqli_query($con, $sql_query);
 $bandera = true;
 if (mysqli_num_rows($result) > 0) {
@@ -77,6 +81,7 @@ if (isset($_POST['but_logout'])) {
                     <tr>
                         <th scope="col">Nombre del Evento</th>
                         <th scope="col">Localizacion del Evento</th>
+                        <th scope="col">Fecha del Evento</th>
                         <th scope="col">Numero de Entradas vendidas</th>
                         <th scope="col">Numero de Entradas totales</th>
                         <th scope="col">Borrar</th>
@@ -85,6 +90,7 @@ if (isset($_POST['but_logout'])) {
                     <tr>
                         <td scope="row"><?php echo $row[1] ?></td>
                         <td><?php echo $row[2] ?></td>
+                        <td><?php echo $row[5] ?></td>
                         <td><?php echo $row[4] ?></td>
                         <td><?php echo $row[3] ?></td>
                         <td><button class="btn btn-primary"onclick="borradoEvento('<?php echo $row[1];?>',<?php echo $row[0];?>)">Borrar</a></td>

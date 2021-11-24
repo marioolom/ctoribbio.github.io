@@ -64,7 +64,7 @@ if (isset($_POST['but_submit'])) {
 
         if ($count <= 0) {
             $sql_query = "INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario)values
-            ('" . $uname . "','" . $password . "','" . $nombre . "','" . $apellidos . "','" . $fechaN . "'," . 0 . ");";
+            ('" . $uname . "',MD5('" . $password . "'),'" . $nombre . "','" . $apellidos . "','" . $fechaN . "'," . 0 . ");";
             if (mysqli_query($con, $sql_query)) {
                 header('Location: index.php');
             } else {

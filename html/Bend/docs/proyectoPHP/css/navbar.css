@@ -1,7 +1,8 @@
-body {
+.body {
   padding-bottom: 20px;
+  background-color:lightgrey;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
+.bg-grey{ background-color:white !important;
+width: 50%;
+margin-left:475px;}

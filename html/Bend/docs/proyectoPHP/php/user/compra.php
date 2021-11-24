@@ -7,13 +7,13 @@ INNER JOIN tickets ON eventos.idEvento=tickets.idEvento inner join organizadores
 WHERE precioTicket IN (SELECT min(precioTicket) FROM tickets WHERE username is NULL GROUP BY idEvento) AND username is null
 GROUP BY tickets.idEvento;";
 $result = mysqli_query($con, $sql_query);
-$bandera=true;
-if(mysqli_num_rows($result)!==0){
+$bandera = true;
+if (mysqli_num_rows($result) !== 0) {
     while ($row = $result->fetch_array()) {
         $rows[] = $row;
     }
-}else{
-    $bandera=false;
+} else {
+    $bandera = false;
 }
 
 
@@ -28,23 +28,21 @@ if (isset($_POST['but_logout'])) {
 <html>
 
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/displayImages.css" type="text/css">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body>  
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Fever</a>
+<body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="./index.php">Fever</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample01">
+        <div class="collapse navbar-collapse " id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="./index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="compra.php">Compra de entradas<span class="sr-only">(current)</span></a>
@@ -59,24 +57,34 @@ if (isset($_POST['but_logout'])) {
             </form>
         </div>
     </nav>
-    <div class="container">
-        <?php
-        if($bandera==false){
-            echo "No hay tickets a la venta";
-        }else{
+    <div class="container w-75">
+        <div class="row d-flex justify-content-space around">
+            <?php
+            if ($bandera == false) {
+                echo "No hay tickets a la venta";
+            } else {
 
-        
-        foreach ($rows as $row) {
-        ?>
-            <div class="column element">
-                <a href="confirmarCompra.php?idTicket=<?php echo $row['idTicket']; ?>"> <span class="hyperspan"></span></a>
-                <img src="<?php echo $row['path']; ?>" alt="Snow" class="img-thumbnail">
-                <p class="precio">Desde <strong><?php echo $row['precioTicket']; ?> </strong>Euros</p>
-                <p class="nombreEvento"><?php echo $row['nombreEvento']; ?></p>
-                <p class="nombreEvento"><?php echo $row['nombre']; ?></p>
-            </div>
-        <?php }} ?>
-        <script>window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')</script>
+                foreach ($rows as $row) {
+            ?>
+                    <div class="card imagen">
+                        <img class="card-img-top ocupar-card" src="<?php echo $row['path']; ?>" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['nombreEvento']; ?>.-</h5>
+                            <p class="card-text"><?php echo $row['fecha']; ?></p>
+                            <p class="card-text"><?php echo $row['precio']; ?></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="confirmarCompra.php?idTicket=<?php echo $row[0]?>" class="btn btn-primary stretched-link">Comprar</a>
+                        </div>
+                    </div>
+
+            <?php }
+            } ?>
+        </div>
+    </div>
+    <script>
+        window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')
+    </script>
     <script src="../../js/popper.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

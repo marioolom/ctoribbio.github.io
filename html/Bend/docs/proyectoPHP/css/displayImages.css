@@ -1,56 +1,7 @@
-
-  a{
-    font-size: 20px;
-    color:white;
-    
-    text-decoration: none;
-  }
-    .container{
-      margin:auto;
-      width: 75%;
-      padding: 10px;
-    }
-    .column {
-      float: left;
-      width: 32%;
-      padding: 5px;
-      margin:2px;
-      position: relative;
-    }
-    
-    /* Clearfix (clear floats) */
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    .precio{
-        text-align: center;
-        font-size: 18px;
-    }
-    .nombreEvento{
-      text-align: center;
-    }
-    strong{
-      font-size:22px;
-    }
-    .imagen {
-        width: 100%;
-        height: 300px;
-        border-radius:10%;
-        object-fit: cover;
-    }
-    .element{
-        border: 2px solid black;
-        background-color: lightseagreen;
-    }
-    .hyperspan
-  {
-      position:absolute;
-      width:100%;
-      height:100%;
-      left:0;
-      top:0;
-      z-index:1;
-  }
-  
+.imagen{
+    width:33% !important;
+    object-fit: cover !important;
+}
+.ocupar-card{
+    height:480px;
+}

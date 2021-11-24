@@ -16,8 +16,30 @@ function loginOrgError(){
 }
 
 function borradoEvento(evento,idTicket){
+    
     var bool=confirm("Estas seguro de que quieres eliminar el evento: "+evento+"?");
     if(bool){
         window.location.href="index.php?idEvento="+idTicket;
+    }
+}
+
+function borradoUsuario(username){
+    var bool=confirm("Estas seguro de que quieres eliminar el usuario: "+username+"?");
+    if(bool){
+        window.location.href="index.php?username="+username;
+    }
+}
+
+function borradoOrganizador(idOrg,nombre){
+    var bool=confirm("Estas seguro de que quieres eliminar el organizador: "+nombre+"?");
+    if(bool){
+        window.location.href="index.php?idOrg="+idOrg;
+    }
+}
+
+function borradoCupon(codCupon){
+    var bool=confirm("Estas seguro de que quieres eliminar el cupón: "+codCupon+"?");
+    if(bool){
+        window.location.href="index.php?codCupon="+codCupon;
     }
 }

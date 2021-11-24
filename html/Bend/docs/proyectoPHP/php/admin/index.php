@@ -8,17 +8,17 @@ if (isset($_POST['but_logout'])) {
     session_destroy();
     header('Location: ../index.php');
 }
+
 $sql_query0="SELECT COUNT(*)AS total, idEvento FROM tickets GROUP BY idEvento;";
 $result0 = mysqli_query($con, $sql_query0);
 while ($row0 = $result0->fetch_array()) {
     $rows0[] = $row0;
 }
 
-$sql_query1 = "SELECT eventos.idEvento,eventos.nombreEvento,organizadores.nombre, COUNT(tickets.idTicket)
+$sql_query1 = "SELECT eventos.idEvento,eventos.nombreEvento,organizadores.nombre,COUNT(tickets.idTicket) AS total, SUM(CASE WHEN tickets.username IS NULL THEN 0 ELSE 1 END) as vendidas,eventos.fecha
                 from eventos 
                 inner join organizadores on eventos.idOrganizador = organizadores.idOrganizador 
-                inner join tickets on eventos.idEvento= tickets.idEvento 
-                WHERE tickets.username IS NULL
+                LEFT JOIN tickets on eventos.idEvento= tickets.idEvento 
                 GROUP BY tickets.idEvento;";
 
 $result1 = mysqli_query($con, $sql_query1);
@@ -75,7 +75,7 @@ if(isset($_GET["codCupon"])){
 }
 
 function borrarEvento(){
-    include "config.php";
+    include "../config.php";
     $sql_query="DELETE FROM eventos WHERE idEvento= ".$_GET["idEvento"].";";
     if( mysqli_query($con, $sql_query)){
        header('Location: index.php');
@@ -85,7 +85,7 @@ function borrarEvento(){
     }
 }
 function borrarOrganizador(){
-    include "config.php";
+    include "../config.php";
     $sql_query="DELETE FROM organizadores WHERE idOrganizador= ".$_GET["idOrg"].";";
     if( mysqli_query($con, $sql_query)){
        header('Location: index.php');
@@ -96,7 +96,7 @@ function borrarOrganizador(){
 }
 
 function borrarCupon(){
-    include "config.php";
+    include "../config.php";
     $sql_query="DELETE FROM cupones WHERE codigoCupon= '".$_GET["codCupon"]."';";
     if( mysqli_query($con, $sql_query)){
        header('Location: index.php');
@@ -107,7 +107,7 @@ function borrarCupon(){
 }
 
 function borrarUsuario(){
-    include "config.php";
+    include "../config.php";
     if($_GET["username"]==$_SESSION["uname"]){
         global $error;
          $error=true;
@@ -138,13 +138,15 @@ if (isset($_POST['but_logout'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
 </head>
-<header>
+<header  class="d-flex justify-content-around mr-5 mt-5">
+    <div class="ml-5">
     <h1>Panel de Administracion</h1>
-        <div class=" nav justify-content-end">
+</div>
+    <div class=" nav justify-content-end ">
             <form method='post' action="">
                 <input type="submit" class="btn btn-primary" value="Logout" name="but_logout">
             </form>
-        </div>
+    </div>
 </header>
 <body>
     <main>
@@ -153,22 +155,25 @@ if (isset($_POST['but_logout'])) {
         <?php $err ?>
         <?php
             if($bandera==true){
-                foreach ($rows1 as $row1) {
+                
               ?>
         <table border="2" class="table">
             <tr>
                 <th scope="col">Nombre del Evento</th>
                 <th scope="col">Organizador</th>
+                <th scope="col">Fecha del Evento</th>
                 <th scope="col">Numero de Entradas</th>
                 <th scope="col">Numero de Entradas vendidas</th>
                 <th scope="col">Borrar</th>
             <tr>
+                <?php foreach ($rows1 as $row1) {?>
             <tr>
                 <td scope="row"><?php echo $row1[1]?></td>
                 <td><?php echo $row1[2]?></td>
+                <td><?php echo $row1[5]?></td>
                 <td><?php echo $row1[3]?></td>
-                <td>1</td>
-                <td><a href="index.php?idEvento=<?php echo $row1[0]?>">Borrar</a></td>
+                <td><?php echo $row1[4]?></td>
+                <td><button class="btn btn-primary"onclick="borradoEvento('<?php echo $row1[1];?>',<?php echo $row1[0];?>)">Borrar</a></td>
             </tr>
             <?php }}else{
                 echo "<p id='errorMessage'>No hay Eventos programados aun</p>";
@@ -203,7 +208,7 @@ if (isset($_POST['but_logout'])) {
                 <td><?php echo $row2[2]?></td>
                 <td><?php echo $row2[3]?></td>
                 <td><?php echo $row2[4]?></td>
-                <td><a href="index.php?username=<?php echo $row2[0]?>">Borrar</a></td>
+                <td><button class="btn btn-primary"onclick="borradoUsuario('<?php echo $row2[0];?>')">Borrar</a></td>
             </tr>
             <?php }}else{
                 echo "<p id='errorMessage'>No hay usuarios registrados aun</p>";
@@ -222,7 +227,6 @@ if (isset($_POST['but_logout'])) {
                 <th>ID Organizador</th>
                 <th>Nombre del Organizador</th>
                 <th>Descripcion</th>
-                <th>Fecha de Nacimiento</th>
                 <th>Borrar</th>
             <tr>
             <?php foreach ($rows3 as $row3) {?>
@@ -230,8 +234,7 @@ if (isset($_POST['but_logout'])) {
                 <td><?php echo $row3[0]?></td>
                 <td><?php echo $row3[1]?></td>
                 <td><?php echo $row3[2]?></td>
-                <td><?php echo $row3[3]?></td>
-                <td><a href="homeadmin.php?idOrg=<?php echo $row3[0]?>">Borrar</a></td>
+                <td><button class="btn btn-primary"onclick="borradoOrganizador(<?php echo $row3[0];?>,'<?php echo $row3[1];?>')">Borrar</a></td>
             </tr>
             <?php }
             }else{
@@ -255,8 +258,8 @@ if (isset($_POST['but_logout'])) {
             <?php foreach ($rows4 as $row4) {?>
             <tr>
                 <td><?php echo $row4[0]?></td>
-                <td><?php echo $row4[2]?>€</td>
-                <td><a href="index.php?codCupon=<?php echo $row4[0]?>">Borrar</a></td>
+                <td><?php echo $row4[2]?>%</td>
+                <td><button class="btn btn-primary"onclick="borradoCupon('<?php echo $row4[0];?>')">Borrar</a></td>
             </tr>
             <?php }
             }else{
@@ -268,5 +271,6 @@ if (isset($_POST['but_logout'])) {
     <aside>
 
     </aside>
+    <script type="text/javascript" src="../../js/main.js"></script>
 </body>
 </html>

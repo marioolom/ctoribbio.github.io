@@ -22,7 +22,7 @@ if (isset($_POST['but_logout'])) {
     <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 
-<body>
+<body class="body">
 <!--
 <body>
     <header>Compra de entradas</header>
@@ -53,7 +53,7 @@ if (isset($_POST['but_logout'])) {
             <ul>
     </nav> !-->
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Never expand</a>
+        <a class="navbar-brand" href="./index.php">Never expand</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +61,7 @@ if (isset($_POST['but_logout'])) {
         <div class="collapse navbar-collapse" id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="./index.php">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="compra.php">Compra de entradas</a>
@@ -76,6 +76,28 @@ if (isset($_POST['but_logout'])) {
             </form>
         </div>
     </nav>
+    <main>
+    <div class="px-4 py-5 my-5 text-center bg-grey rounded mb-5">
+    <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold">No te pierdas nada</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Todos los eventos en tu zona, ciudad, comunidad, pais, estan aquí.<br>La diversion te espera</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="compra.php"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Compra ahora</button></a>
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-5 my-5 text-center bg-grey rounded mt-5">
+    <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold">Comparte con tus amigos</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Las entradas de todo el grupo en el mismo lugar, sin preocupaciones, sin problemas</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="misTickets.php"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Tus Tickets</button></a>
+      </div>
+    </div>
+  </div>
+    </main>
     <script>window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')</script>
     <script src="../../js/popper.min.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
