@@ -1,15 +1,15 @@
 <?php
-include "config.php";
+include "../config.php";
 
 // Check user login or not
 if (!isset($_SESSION['uname'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 // logout
 if (isset($_POST['but_logout'])) {
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 ?>
 <!doctype html>
@@ -19,7 +19,7 @@ if (isset($_POST['but_logout'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 
 <body>
@@ -76,9 +76,9 @@ if (isset($_POST['but_logout'])) {
             </form>
         </div>
     </nav>
-    <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
-    <script src="../js/popper.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script>window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../js/popper.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
 

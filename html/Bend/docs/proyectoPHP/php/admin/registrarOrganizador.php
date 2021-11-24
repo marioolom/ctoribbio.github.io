@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "../config.php";
 $err = "";
 if (isset($_POST['but_submit'])) {
 
@@ -20,7 +20,7 @@ if (isset($_POST['but_submit'])) {
             $sql_query = "INSERT INTO organizadores(idOrganizador,codAcceso,nombre,descripcion)values
             (" . $idOrg . ",'" . $codAcceso . "','" . $nombre . "','" . $descripcion . "');";
             if (mysqli_query($con, $sql_query)) {
-                header('Location: homeadmin.php');
+                header('Location: index.php');
             } else {
                 $err = "Dato no introducido";
                 echo "<p>" . $sql_query . "</p>";
@@ -32,6 +32,9 @@ if (isset($_POST['but_submit'])) {
         $err = "No se permiten campos vacios ";
     }
 }
+if (!isset($_SESSION['uname'])) {
+    header('Location: index.php');
+}
 ?>
 
 
@@ -39,7 +42,7 @@ if (isset($_POST['but_submit'])) {
 
 <head>
     <title>Create simple login page with PHP and MySQL</title>
-    <link href="../css/login.css" rel="stylesheet" type="text/css">
+    <link href="../../css/login.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>

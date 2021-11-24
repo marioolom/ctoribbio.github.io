@@ -1,12 +1,12 @@
 <?php
-include "config.php";
+include "../config.php";
 if (!isset($_SESSION['uname'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 if (isset($_POST['but_logout'])) {
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 $sql_query0="SELECT COUNT(*)AS total, idEvento FROM tickets GROUP BY idEvento;";
 $result0 = mysqli_query($con, $sql_query0);
@@ -78,7 +78,7 @@ function borrarEvento(){
     include "config.php";
     $sql_query="DELETE FROM eventos WHERE idEvento= ".$_GET["idEvento"].";";
     if( mysqli_query($con, $sql_query)){
-       header('Location: homeadmin.php');
+       header('Location: index.php');
     }else{
         echo "Errors";
         echo $sql_query;
@@ -88,7 +88,7 @@ function borrarOrganizador(){
     include "config.php";
     $sql_query="DELETE FROM organizadores WHERE idOrganizador= ".$_GET["idOrg"].";";
     if( mysqli_query($con, $sql_query)){
-       header('Location: homeadmin.php');
+       header('Location: index.php');
     }else{
         echo "Errors";
         echo $sql_query;
@@ -99,7 +99,7 @@ function borrarCupon(){
     include "config.php";
     $sql_query="DELETE FROM cupones WHERE codigoCupon= '".$_GET["codCupon"]."';";
     if( mysqli_query($con, $sql_query)){
-       header('Location: homeadmin.php');
+       header('Location: index.php');
     }else{
         echo "Errors";
         echo $sql_query;
@@ -114,7 +114,7 @@ function borrarUsuario(){
     }else{
     $sql_query="DELETE FROM users WHERE username= '".$_GET["username"]."';";
     if( mysqli_query($con, $sql_query)){
-       header('Location: homeadmin.php');
+       header('Location: index.php');
     }else{
         echo "Errors";
         echo $sql_query;
@@ -123,7 +123,7 @@ function borrarUsuario(){
 }
 if (isset($_POST['but_logout'])) {
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 ?>
@@ -139,7 +139,7 @@ if (isset($_POST['but_logout'])) {
     
 </head>
 <header>
-    <h1>Panel de Administracion<h1>
+    <h1>Panel de Administracion</h1>
         <div class=" nav justify-content-end">
             <form method='post' action="">
                 <input type="submit" class="btn btn-primary" value="Logout" name="but_logout">
@@ -168,7 +168,7 @@ if (isset($_POST['but_logout'])) {
                 <td><?php echo $row1[2]?></td>
                 <td><?php echo $row1[3]?></td>
                 <td>1</td>
-                <td><a href="homeadmin.php?idEvento=<?php echo $row1[0]?>">Borrar</a></td>
+                <td><a href="index.php?idEvento=<?php echo $row1[0]?>">Borrar</a></td>
             </tr>
             <?php }}else{
                 echo "<p id='errorMessage'>No hay Eventos programados aun</p>";
@@ -179,7 +179,7 @@ if (isset($_POST['but_logout'])) {
         <h3>Usuarios Registrados</h3>
         <?php
         if($error){
-            header('Location: homeadmin.php?error=true');
+            header('Location: index.php?error=true');
             
         }
         if(isset($_GET['error'])){
@@ -203,7 +203,7 @@ if (isset($_POST['but_logout'])) {
                 <td><?php echo $row2[2]?></td>
                 <td><?php echo $row2[3]?></td>
                 <td><?php echo $row2[4]?></td>
-                <td><a href="homeadmin.php?username=<?php echo $row2[0]?>">Borrar</a></td>
+                <td><a href="index.php?username=<?php echo $row2[0]?>">Borrar</a></td>
             </tr>
             <?php }}else{
                 echo "<p id='errorMessage'>No hay usuarios registrados aun</p>";
@@ -256,7 +256,7 @@ if (isset($_POST['but_logout'])) {
             <tr>
                 <td><?php echo $row4[0]?></td>
                 <td><?php echo $row4[2]?>€</td>
-                <td><a href="homeadmin.php?codCupon=<?php echo $row4[0]?>">Borrar</a></td>
+                <td><a href="index.php?codCupon=<?php echo $row4[0]?>">Borrar</a></td>
             </tr>
             <?php }
             }else{

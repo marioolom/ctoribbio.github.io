@@ -1,7 +1,7 @@
 <?php
-include "config.php";
+include "../config.php";
 if (!isset($_SESSION['idOrg'])) {
-    header('Location: loginOrganizador.php');
+    header('Location: ../loginOrganizador.php');
 }
 $sql_query = "select * from eventos";
 $result = mysqli_query($con, $sql_query);
@@ -28,7 +28,7 @@ if (isset($_POST['but_submit'])) {
 <html>
 
 <head>
-    <link href="../css/crearEvento.css" rel="stylesheet" type="text/css">
+    <link href="../../css/crearEvento.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>

@@ -14,3 +14,10 @@ function loginOrgError(){
     var tmp=document.querySelector("#h1");
     tmp.insertAdjacentElement("afterend", element);
 }
+
+function borradoEvento(evento,idTicket){
+    var bool=confirm("Estas seguro de que quieres eliminar el evento: "+evento+"?");
+    if(bool){
+        window.location.href="index.php?idEvento="+idTicket;
+    }
+}

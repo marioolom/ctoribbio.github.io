@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "../config.php";
 
 $sql_query = "SELECT tickets.*, eventos.*,organizadores.nombre
 FROM eventos
@@ -21,7 +21,7 @@ if(mysqli_num_rows($result)!==0){
 
 if (isset($_POST['but_logout'])) {
     session_destroy();
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 ?>
 <!doctype html>
@@ -29,8 +29,8 @@ if (isset($_POST['but_logout'])) {
 
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="..\css\displayImages.css" type="text/css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/displayImages.css" type="text/css">
     
 </head>
 
@@ -76,9 +76,9 @@ if (isset($_POST['but_logout'])) {
                 <p class="nombreEvento"><?php echo $row['nombre']; ?></p>
             </div>
         <?php }} ?>
-        <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
-    <script src="../js/popper.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <script>window.jQuery || document.write('<script src="../../js/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../js/popper.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 </body>

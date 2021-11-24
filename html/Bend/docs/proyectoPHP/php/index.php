@@ -25,6 +25,7 @@
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="txt_pwd" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="but_submit" id="btnSignIn">Iniciar Sesion</button>
+                <a href="registro.php">Registrate ahora.</a>
             </form>
         </div>
         <div class="left align-bottom mt-4">
@@ -56,10 +57,10 @@ if (isset($_POST['but_submit'])) {
         if ($count > 0) {
             if ($row['tipoUsuario'] == 1) {
                 $_SESSION['uname'] = $uname;
-                header('Location: homeadmin.php');
+                header('Location: admin/index.php');
             } else {
                 $_SESSION['uname'] = $uname;
-                header('Location: home.php');
+                header('Location: user/index.php');
             }
         } else {
             echo '<script>loginError()</script>';

@@ -1,9 +1,9 @@
 <?php
 
-include "config.php";
+include "../config.php";
 
 if (!isset($_SESSION['uname'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 // logout
@@ -59,7 +59,7 @@ if(isset($_POST['enviarCupon'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/confirmar.css">
+    <link rel="stylesheet" href="../../css/confirmar.css">
 </head>
 
 <body>

@@ -27,6 +27,7 @@
     <div class="float-center align-bottom mt-4">
         <a href="index.php"><button class="btn btn-primary">Login de Usuarios</button></a>
     </div>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 </div>
   </body>
 </html>
@@ -50,7 +51,7 @@ if (isset($_POST['but_submit'])) {
 
         if ($count > 0) {
             $_SESSION['idOrg'] = $idOrg;
-            header('Location: homeOrganizador.php');
+            header('Location: organizador/index.php');
         } else {
             echo '<script>loginOrgError()</script>';
         }

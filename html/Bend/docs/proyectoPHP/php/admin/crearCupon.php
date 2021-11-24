@@ -1,7 +1,7 @@
-<?php include "config.php";
+<?php include "../config.php";
 
 if (!isset($_SESSION['uname'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 $bandera=true;
@@ -42,7 +42,7 @@ if(isset($_POST['enviarCupon'])){
         <input type="submit" name="enviarCupon" placeholder="Crear">
         <input type="reset" name="reset" placeholder="Borrar">
     </form>
-    <button><a href="homeadmin.php">Volver</a></button>
+    <button><a href="index.php">Volver</a></button>
     </div>
 </body>
 </html>
