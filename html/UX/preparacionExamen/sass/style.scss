@@ -1,0 +1,46 @@
+$primary:#3766a0;
+$primary-light:#6b93d1;
+$primary-dark:#003c71;
+
+$secondary: #ffcf86;
+$secondary-light:#ffffb7;
+$secondary-dark: #ca9e58;
+
+$text-font: 'Merriweather', serif;
+$headline-font:'Varela Round', sans-serif;
+
+html,body{
+    height:100%;
+    margin:0;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+}
+
+header{
+    height:10%;
+}
+
+main{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+section{
+    width:85%;
+    display:flex;
+    justify-content:space-evenly;
+}
+aside{
+    width:15%;
+}
+article{
+    width:45%;
+}
+footer{
+    height:10%;
+    margin:5px;
+}
