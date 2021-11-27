@@ -122,7 +122,7 @@ Crear un segundo FTP
 Creamos una carpeta en /var/ftp por ejemplo /var/ftp/servidor2
 Le cambiamos el usuario a ftp con chown 
 Descomentamos la linea de Include /etc/proftpd/virtuals.conf Linea 160
-Copiamos y pegamos la linea de la 10 a la 18 y las descomentamos menos la de TransferLog
+Copiamos y pegamos la linea de la 10 a la 18 de virtuals.conf y las descomentamos menos la de TransferLog
 Cambiamos el nombre del servidor para saber a cual nos conectamos
 Cambiamos la directiva Default Root a la carpeta creada en la linea 122 de estos apuntes
 Añadir a /etc/hosts la ip del servidor y el nombre del servidor definido en virtuals.conf en
