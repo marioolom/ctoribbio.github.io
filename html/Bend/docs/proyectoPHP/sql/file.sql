@@ -45,7 +45,7 @@ CREATE TABLE cupones(
 );
 
 INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario) values
-    ("root","root","root","root","1970-01-01",1);
+    ("root",MD5("root"),"root","root","1970-01-01",1);
 
 INSERT INTO organizadores(nombre,descripcion,codAcceso) values 
     ("Fabrik Madrid", "Club de Musica Electronica","123");
