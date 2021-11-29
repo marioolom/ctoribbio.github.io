@@ -26,7 +26,7 @@ if (isset($_POST['but_submit'])) {
 <head>
    <!-- <link href="../../css/crearEvento.css" rel="stylesheet" type="text/css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <script type="text/javascript" src="../../js/main.js"></script>
 </head>
 
 <body class="d-flex justify-content-center">
@@ -45,7 +45,7 @@ if (isset($_POST['but_submit'])) {
                 <input type="text" class="textbox" required id="txt_uname" name="localizacionEvento" placeholder="Localizacion Evento" />
             </div class="m-1">
             <div class="m-3 d-flex justify-content-center">
-                <input type="date" class="custom-date" required id="fecha" name="fecha" placeholder="Fecha Evento" />
+                <input type="date" class="custom-date" required id="inputFecha" name="fecha" placeholder="Fecha Evento"  />
             </div>
             <div class=" m-3 d-flex justify-content-right custom-file ">
                 <input type="file" class="custom-file-input" required id="customFile" name="file">
@@ -59,6 +59,7 @@ if (isset($_POST['but_submit'])) {
     
     </form>
 </div> 
+<script>fechaActual();</script>
 </body>
 
 </html>

@@ -12,13 +12,14 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../css/signin.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body class="text-center">
     <div class="d-flex justify-content-center">
         <div class="align-left">
             <form class="form-signin m-5 float-center " action="" method="post">
-                <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <embed class="mb-4" src="../assets/logo.svg" alt="" width="72" height="72">
                 <h1 class="h3 mr-5 ml-5 mb-3 font-weight-normal" id="h1">Registro</h1>
                 <label for="inputEmail" class="sr-only">Usuario</label>
                 <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" name="txt_uname" required autofocus>
@@ -28,7 +29,7 @@
                 <label for="inputPassword" class="sr-only">Apellidos</label>
                 <input type="text" id="inputPassword" class="form-control" placeholder="Apellidos" name="txt_apel" required>
                 <label for="inputPassword" class="sr-only">Fecha de Nacimiento</label>
-                <input type="date" id="inputPassword" class="form-control" placeholder="" name="fechaN" required>
+                <input type="date" id="inputFecha" class="form-control" placeholder="" name="fechaN" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="but_submit" id="btnSignIn">Registrarse</button>
             </form>
         </div>
@@ -36,6 +37,7 @@
             <a href="index.php"><button class="btn btn-primary">Inicio de Sesion</button></a>
         </div>
     </div>
+    <script>calcularFecha();</script>
 </body>
 
 </html>

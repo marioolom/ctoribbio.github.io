@@ -53,7 +53,7 @@ if (isset($_POST['but_logout'])) {
             <ul>
     </nav> !-->
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="./index.php">Never expand</a>
+        <a class="navbar-brand" href="./index.php">TicketGo </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,7 +78,7 @@ if (isset($_POST['but_logout'])) {
     </nav>
     <main>
     <div class="px-4 py-5 my-5 text-center bg-grey rounded mb-5">
-    <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <embed class="d-block mx-auto mb-4" src="../../assets/logo.svg" alt="" width="100" height="100">
     <h1 class="display-5 fw-bold">No te pierdas nada</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Todos los eventos en tu zona, ciudad, comunidad, pais, estan aquí.<br>La diversion te espera</p>
@@ -88,7 +88,7 @@ if (isset($_POST['but_logout'])) {
     </div>
   </div>
   <div class="px-4 py-5 my-5 text-center bg-grey rounded mt-5">
-    <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+  <embed class="d-block mx-auto mb-4" src="../../assets/logo.svg" alt="" width="100" height="100">
     <h1 class="display-5 fw-bold">Comparte con tus amigos</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Las entradas de todo el grupo en el mismo lugar, sin preocupaciones, sin problemas</p>

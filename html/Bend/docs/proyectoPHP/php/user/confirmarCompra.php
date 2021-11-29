@@ -34,7 +34,6 @@ if (isset($_POST['but_confirmar'])) {
 $bandera=false;
 if(isset($_POST['enviarCupon'])){
     $sql_query3="SELECT * FROM cupones WHERE codigoCupon='".$_POST['cupon']."';";
-    echo $sql_query3;
     $result3=mysqli_query($con,$sql_query3);
     if(mysqli_num_rows($result3)>0){
         while ($row3 = $result3->fetch_array()) {
@@ -44,6 +43,7 @@ if(isset($_POST['enviarCupon'])){
         $bandera=true;
     }else{
         $bandera=false;
+        echo "<script>alert('No existe ese codigo de descuento');</script>";
     }
 }
 

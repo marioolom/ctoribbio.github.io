@@ -131,7 +131,7 @@ proftpd - td5 Checkea la sintaxis de toda la configuracion
 Limites FTP
 Con la etiqueta <limit comandoFTP > ponemos limites bien a una carpeta o host virtual a cualquier comando FTP 
 Vamos a añadir al final de la linea lo siguiente para denegar todos los LOGIN 
-      <Limit LOGIN>
+      <Limit LOGIN>     
 	      DenyAll
             AllowUser kali
       </Limit>

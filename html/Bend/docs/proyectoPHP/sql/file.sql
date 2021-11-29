@@ -48,7 +48,7 @@ INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario
     ("root",MD5("root"),"root","root","1970-01-01",1);
 
 INSERT INTO organizadores(nombre,descripcion,codAcceso) values 
-    ("Fabrik Madrid", "Club de Musica Electronica","123");
+    ("Fabrik Madrid", "Club de Musica Electronica",MD5("123"));
 
 INSERT INTO cupones(username, codigoCupon, cuantia) values
     ("global","navidad2020","10"),

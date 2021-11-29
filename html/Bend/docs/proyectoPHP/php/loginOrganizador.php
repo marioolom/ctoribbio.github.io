@@ -16,7 +16,7 @@
   <body class="text-center">
     <div>
     <form class="form-signin m-5" action="" method="post" >
-      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <embed class="mb-4" src="../assets/logo.svg" alt="" width="72" height="72">
       <h1 class="h3 mr-5 ml-5 mb-3 font-weight-normal" id="h1">Inicio de Sesion</h1>
       <label for="inputEmail" class="sr-only">ID de Organizador</label>
       <input type="text" id="inputEmail" class="form-control" placeholder="ID de Organizador" name="txt_idOrg" required autofocus>

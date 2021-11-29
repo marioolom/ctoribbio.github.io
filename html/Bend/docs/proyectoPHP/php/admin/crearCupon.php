@@ -46,18 +46,20 @@ if(isset($_POST['enviarCupon'])){
     <div class="d-flex justify-content-center">
         <div class="align-left">
             <form class="form-signin m-5 float-center " action="" method="post">
-                <h1 class="h3 mr-5 ml-5 mb-3 font-weight-normal" id="h1">Registro</h1>
+                <h1 class="h3 mr-5 ml-5 mb-3 font-weight-normal" id="h1">Nuevo Cupón</h1>
                 <label for="codCupon" class="sr-only">ID de Organizador</label>
                 <input type="text" id="codigoCupon" class="form-control" placeholder="Codigo del cupon" name="codigoCupon" required autofocus>
                 <label for="inputUser" class="sr-only">Username</label>
                 <input type="text" id="inputUser" class="form-control custom" placeholder="Username" value="global" name="username" required>
                 <input type="number" class="form-control" placeholder="Cuantia en %" name="cuantia" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="enviarCupon" id="btnSignIn">Crear Cupon</button>
+                
             </form>
-        </div>
-        <div class="align-self-end ">
+            <div class="align-self-end ">
             <a href="index.php"><button class="btn btn-primary">Atrás</button></a>
         </div>
+        </div>
+        
     </div>
     <script type="text/javascript" src="../js/main.js"></script>
 </body>

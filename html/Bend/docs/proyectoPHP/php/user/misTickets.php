@@ -6,7 +6,7 @@ if (!isset($_SESSION['uname'])) {
 }
 $bandera = true;
 
-$sql_query = "select eventos.*, tickets.username, count(tickets.idTicket) AS numeroTickets from eventos inner join tickets on tickets.idEvento=eventos.idEvento where username='" . $_SESSION['uname'] . "' GROUP BY eventos.idEvento;";
+$sql_query = "select eventos.*, tickets.username,tickets.idTicket, count(tickets.idTicket) AS numeroTickets from eventos inner join tickets on tickets.idEvento=eventos.idEvento where username='" . $_SESSION['uname'] . "' GROUP BY eventos.idEvento;";
 $result = mysqli_query($con, $sql_query);
 if (mysqli_num_rows($result) !== 0) {
     while ($row = $result->fetch_array()) {
@@ -41,14 +41,14 @@ if (isset($_POST['but_logout'])) {
 
         <div class="collapse navbar-collapse" id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="compra.php">Compra de entradas</a>
                 </li>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="misTickets.php">Mis tickets<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
@@ -61,7 +61,12 @@ if (isset($_POST['but_logout'])) {
         <div class="row d-flex justify-content-space around">
             <?php
             if ($bandera == false) {
-                echo "No hay tickets a la venta";
+               ?><div class="nodata">
+                   <img src="../../assets/nodata.png">
+                   <h3>Aun no tienes Tickets.<h3>
+                <h4><a href="compra.php">Compra Aquí.</a></h4>
+               </div>
+               <?php
             } else {
 
                 foreach ($rows as $row) {
@@ -69,12 +74,12 @@ if (isset($_POST['but_logout'])) {
                     <div class="card imagen">
                         <img class="card-img-top ocupar-card" src="<?php echo $row['path']; ?>" alt="Card image">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $row['nombreEvento']; ?>.-</h5>
-                            <p class="card-text">Tienes <?php echo $row['numeroTickets']; ?> para este evento</p>
-                            <p class="card-text"><?php echo $row['precio']; ?></p>
+                            <h5 class="card-title"><?php echo $row['nombreEvento']; ?></h5>
+                            <p class="card-text">Tienes <?php echo $row['numeroTickets']; ?> tickets para este evento</p>
+                            <p class="card-text"><?php echo $row['fecha']; ?></p>
                         </div>
                         <div class="card-footer">
-                            <a href="verTicket.php?idEvento=<?php echo $row['idEvento']; ?>" class="btn btn-primary stretched-link">Ver Ticket</a>
+                            <a href="verTicket.php?idTicket=<?php echo $row['idTicket']; ?>" class="btn btn-primary stretched-link">Ver Ticket</a>
                         </div>
                     </div>
 
