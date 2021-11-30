@@ -45,11 +45,11 @@ CREATE TABLE cupones(
 );
 
 INSERT INTO users(username,password,nombre,apellidos,fechaNacimiento,tipoUsuario) values
-    ("root",MD5("root"),"root","root","1970-01-01",1);
+    ("root",MD5("root"),"root","root","1970-01-01",1),
+    ("joseluis",MD5("joseluis"),"Jose Luis","Román","1965-05-08",0);
 
 INSERT INTO organizadores(nombre,descripcion,codAcceso) values 
     ("Fabrik Madrid", "Club de Musica Electronica",MD5("123"));
 
 INSERT INTO cupones(username, codigoCupon, cuantia) values
-    ("global","navidad2020","10"),
-    ("ctoribbio","123","15");
+    ("global","navidad2020","10");

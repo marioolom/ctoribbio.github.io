@@ -33,7 +33,6 @@ if (mysqli_num_rows($result) !== 0) {
     $bandera = false;
 }
 $sql_query2="select COUNT(tickets.idTicket) as numTickets from tickets inner join eventos on tickets.idEvento = eventos.idEvento where tickets.idEvento=(SELECT idEvento from tickets where idTicket=".$_GET["idTicket"].") AND tickets.username = '".$_SESSION['uname']."';";
-echo $sql_query2;
 $result2 = mysqli_query($con, $sql_query2);
 while ($row2 = $result2->fetch_array()) {
     $rows2[] = $row2;

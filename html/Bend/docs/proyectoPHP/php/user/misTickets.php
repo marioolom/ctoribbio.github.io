@@ -34,7 +34,7 @@ if (isset($_POST['but_logout'])) {
 
 <body>
     <nav class="navbar navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="./index.php">Fever</a>
+        <a class="navbar-brand" href="./index.php">TicketGo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
