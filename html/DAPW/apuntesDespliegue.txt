@@ -172,3 +172,31 @@ Para conectar al servidor y configurarlo ponemos en la IP 127.0.0.1 y el puerto 
 Una vez en la pantalla, haremos click en Server->Configurar
 Añadimos una fila con nuestra IP, el puerto 21 y la primera de las tres opciones del desplegable
 Si todo ha salido bien y hacemos netstat -a saldria nuestra IP y el puerto 21 a la escucha
+
+Tema 4 Documentacion
+Javadoc PhpDoc Doxygen
+Comentar Paqueres clases y elementos 
+3 tipos de comentarios en linea bloque y javadoc 
+
+Generar Documentacion para proyectos escritos en PHP
+Necesitamos un interpete PHP para ejecutar archivos .phar
+Metemos el archivo .phar en la carpeta del interprete php y el index. phpBB3
+desde la consola de xampp nos cambiamos a la carpeta php
+Hay que conocer 3 modificadores
+      -d Indicar directorios
+      -f Indicar ficheros
+      -t Indicar la carpeta de salida 
+Hacemos el comando: php phpDocumentor.phar -f index.php -t ./docs/api
+
+Javadoc con Netbeans
+
+Doxygen
+Es un generador de documentacion multilenguaje
+https://www.doxygen.nl/download.html Instalamos Doxygen de ese enlace
+Lo primero que hemos de conocer es la ruta del proyecto a documentar
+
+Los entornos de desarrollo crean una cierta plantilla con comentarios determinados
+Crear una plantilla en netbeans
+Tools-Templates-Java-Java Class- Open in editor
+
+Uso de IA para generar codigo fuente

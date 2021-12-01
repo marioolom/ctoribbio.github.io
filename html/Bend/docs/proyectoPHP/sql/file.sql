@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS ventaentradas;
 
 CREATE DATABASE ventaentradas;
 
+USE ventaentradas;
+
 CREATE TABLE users(
     username varchar(255) PRIMARY KEY,
     password varchar(255) NOT NULL,

@@ -1,37 +1,41 @@
-suma:
-    path: /calculator/suma/{num1}/{num2}
-    defaults: {_controller: AppBundle:Calculator:suma, num1: 5, num2: 5}
-resta:
-    path: /calculator/resta/{num1}/{num2}
-    defaults: {_controller: AppBundle:Calculator:resta, num1: 5, num2: 5} 
-multiplicacion:
-    path: /calculator/mult/{num1}/{num2}
-    defaults: {_controller: AppBundle:Calculator:mult, num1: 5, num2: 5}
-division:
-    path: /calculato/div/{num1}/{num2}
-    defaults: {_controller: AppBundle:Calculator:div, num1: 5, num2: 5} 
-#mensaje plano
-index: 
-    path: /index/{mensaje}
-    defaults: {_controller: AppBundle:Message:index}
-#mensaje a vista
-vista:
-    path: /index/vista/{mensaje}
-    defaults: {_controller: AppBundle:Message:vista}
+#Ejercicio 1
 
-#Redirecciones
+index: 
+    path: /{mensaje}
+    defaults: {_controller: AppBundle:Ejercicio1:index}
+
+vista:
+    path: /vista/{mensaje}
+    defaults: {_controller: AppBundle:Ejercicio1:get}
+
+suma:
+    path: /suma/{num1}/{num2}
+    defaults: {_controller: AppBundle:Ejercicio1:suma, num1: 5, num2: 5}
+resta:
+    path: /resta/{num1}/{num2}
+    defaults: {_controller: AppBundle:Ejercicio1:resta, num1: 5, num2: 5} 
+multiplicacion:
+    path: /multipli/{num1}/{num2}
+    defaults: {_controller: AppBundle:Ejercicio1:multipli, num1: 5, num2: 5}
+division:
+    path: /divide/{num1}/{num2}
+    defaults: {_controller: AppBundle:Ejercicio1:divide, num1: 5, num2: 5} 
+
+
+
+#Ejercicio 2 
 redirect_index:
     path: /redirect/index
-    defaults: {_controller: AppBundle:Redirect:index}
+    defaults: {_controller: AppBundle:Ejercicio2:index}
 
 redirect_interna_index:
     path: /redirectinterna/index
-    defaults: {_controller: AppBundle:Redirect:internaRedirect}
+    defaults: {_controller: AppBundle:Ejercicio2:internalRedirect}
 
 redirect_interna_permanent_index:
     path: /redirectinternapermanente/index
-    defaults: {_controller: AppBundle:Redirect:internaRedirectPermanent}
+    defaults: {_controller: AppBundle:Ejercicio2:internalRedirectPermanent}
 
 redirect_externa_index:
     path: /redirectexterna/index
-    defaults: {_controller: AppBundle:Redirect:externaRedirect}
+    defaults: {_controller: AppBundle:Ejercicio2:externaRedirect}
