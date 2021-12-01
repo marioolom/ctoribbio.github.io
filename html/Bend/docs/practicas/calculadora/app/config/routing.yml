@@ -1,0 +1,12 @@
+suma:
+    path: /calculator/suma/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:suma, num1: 5, num2: 5}
+resta:
+    path: /calculator/resta/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:resta, num1: 5, num2: 5} 
+multiplicacion:
+    path: /calculator/mult/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:mult, num1: 5, num2: 5}
+division:
+    path: /calculator/div/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:div, num1: 5, num2: 5} 

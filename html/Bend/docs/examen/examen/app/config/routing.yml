@@ -1,0 +1,37 @@
+suma:
+    path: /calculator/suma/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:suma, num1: 5, num2: 5}
+resta:
+    path: /calculator/resta/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:resta, num1: 5, num2: 5} 
+multiplicacion:
+    path: /calculator/mult/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:mult, num1: 5, num2: 5}
+division:
+    path: /calculato/div/{num1}/{num2}
+    defaults: {_controller: AppBundle:Calculator:div, num1: 5, num2: 5} 
+#mensaje plano
+index: 
+    path: /index/{mensaje}
+    defaults: {_controller: AppBundle:Message:index}
+#mensaje a vista
+vista:
+    path: /index/vista/{mensaje}
+    defaults: {_controller: AppBundle:Message:vista}
+
+#Redirecciones
+redirect_index:
+    path: /redirect/index
+    defaults: {_controller: AppBundle:Redirect:index}
+
+redirect_interna_index:
+    path: /redirectinterna/index
+    defaults: {_controller: AppBundle:Redirect:internaRedirect}
+
+redirect_interna_permanent_index:
+    path: /redirectinternapermanente/index
+    defaults: {_controller: AppBundle:Redirect:internaRedirectPermanent}
+
+redirect_externa_index:
+    path: /redirectexterna/index
+    defaults: {_controller: AppBundle:Redirect:externaRedirect}
