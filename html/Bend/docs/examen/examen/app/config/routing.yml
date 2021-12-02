@@ -10,16 +10,16 @@ vista:
 
 suma:
     path: /suma/{num1}/{num2}
-    defaults: {_controller: AppBundle:Ejercicio1:suma, num1: 5, num2: 5}
+    defaults: {_controller: AppBundle:Ejercicio1:suma, num1: 6, num2: 9}
 resta:
     path: /resta/{num1}/{num2}
-    defaults: {_controller: AppBundle:Ejercicio1:resta, num1: 5, num2: 5} 
+    defaults: {_controller: AppBundle:Ejercicio1:resta, num1: 9, num2: 6} 
 multiplicacion:
     path: /multipli/{num1}/{num2}
-    defaults: {_controller: AppBundle:Ejercicio1:multipli, num1: 5, num2: 5}
+    defaults: {_controller: AppBundle:Ejercicio1:multipli, num1: 9, num2: 6}
 division:
     path: /divide/{num1}/{num2}
-    defaults: {_controller: AppBundle:Ejercicio1:divide, num1: 5, num2: 5} 
+    defaults: {_controller: AppBundle:Ejercicio1:divide, num1: 6, num2: 9} 
 
 
 

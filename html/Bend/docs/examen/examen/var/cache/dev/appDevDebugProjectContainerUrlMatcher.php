@@ -119,12 +119,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // suma
         if (0 === strpos($pathinfo, '/suma') && preg_match('#^/suma(?:/(?P<num1>[^/]++)(?:/(?P<num2>[^/]++))?)?$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'suma']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::sumaAction',  'num1' => 5,  'num2' => 5,));
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'suma']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::sumaAction',  'num1' => 6,  'num2' => 9,));
         }
 
         // resta
         if (0 === strpos($pathinfo, '/resta') && preg_match('#^/resta(?:/(?P<num1>[^/]++)(?:/(?P<num2>[^/]++))?)?$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'resta']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::restaAction',  'num1' => 5,  'num2' => 5,));
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'resta']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::restaAction',  'num1' => 9,  'num2' => 6,));
         }
 
         if (0 === strpos($pathinfo, '/redirect')) {
@@ -152,12 +152,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // multiplicacion
         if (0 === strpos($pathinfo, '/multipli') && preg_match('#^/multipli(?:/(?P<num1>[^/]++)(?:/(?P<num2>[^/]++))?)?$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'multiplicacion']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::multipliAction',  'num1' => 5,  'num2' => 5,));
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'multiplicacion']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::multipliAction',  'num1' => 9,  'num2' => 6,));
         }
 
         // division
         if (0 === strpos($pathinfo, '/divide') && preg_match('#^/divide(?:/(?P<num1>[^/]++)(?:/(?P<num2>[^/]++))?)?$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'division']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::divideAction',  'num1' => 5,  'num2' => 5,));
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'division']), array (  '_controller' => 'AppBundle\\Controller\\Ejercicio1Controller::divideAction',  'num1' => 6,  'num2' => 9,));
         }
 
         if ('/' === $pathinfo && !$allow) {
