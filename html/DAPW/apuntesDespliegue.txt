@@ -12,9 +12,38 @@ CaaS: Containers as a service: Es un nivel intermedio localizado entre la Infrae
 FaaS: Function as a service: Sirven para que los desarrolladores diseñen, ejecuten y gestionen paquetes de apliaciones sin tener en cuenta la Infraestructura.
     AWS Lambda, OpenFaas, Google Cloud Functions.
 
+Fases de DevOps
+      1-Planificacion.- Office, Google Docs
+      2-Desarrollo - Git, Docker
+      3-Integracion continua - Maven, Ant
+      4-Despliegue - Docker
+      5-Operacion - Kubernetes
+      6-Monitorizacion - DataDog
+      7-Automatizacion y entrega continua - Jenkins
+
+
+
 HTTPS
 HTTP 3.0 
 Gemini
+200 304 403 408 429 505 mou
+
+Codigos de error de HTTP
+1xx- Respuestas informativas
+2xx- Respuestas Satisfactorias
+3xx- Redirecciones Satisfactoria
+4xx- Errores del cliente
+5xx- Errores del servidor
+
+200- Ok, indica que la peticion ha sido atendida correctamente
+304- La pagina no ha sido modificada con respecto a la version existente en caché 
+403- El cliente no tiene los permiso para acceder a ese contenido 
+408- Conexion inactiva
+429- Demasiadas solicitudes
+505- Version de HTTP no soportada
+404- Recurso no encontrado
+500- Error interno del servidor
+
 
 Capturar el certificado en una red segura utilizando cada uno de estos protocolos 
 Conoces algun certificado raiz que haya caducado recientemente 
@@ -26,16 +55,32 @@ ps -aux |grep "apache2"
 a2 ensite
 a2 dissite
 
-/var/www/html --Index del server apache 
-Directivas.
-      ServerRoot- Configurar el directorio raiz de la instalacion.
-      Timeout: Configurar tiempo maximo permitido antes de cerrar la conexion con el cliente
-      KeepAlive: COnfigurar si se permiten conexiones persistentes
-      MaxKeepAliveRequests: Configurar el maximo de conexiones persistentes
-      HostnameLookups: Configurar el diseñen
-      Include: Para incluir ficheros externos
-      Alias: Permite definir directorios virtuales en lugares distintos a los indicados en la URL
-      Redirect: Permite indicar que el documento ha sido actualizado o modificado
+#Directivas.
+#      ServerRoot- Configurar el directorio raiz de la instalacion.
+#      Timeout: Configurar tiempo maximo permitido antes de cerrar la conexion con el cliente
+#      KeepAlive: COnfigurar si se permiten conexiones persistentes
+#      MaxKeepAliveRequests: Configurar el maximo de conexiones persistentes
+#      HostnameLookups: Configurar el diseñen
+#      Include: Para incluir ficheros externos
+#      Alias: Permite definir directorios virtuales en lugares distintos a los indicados en la URL
+#      Redirect: Permite indicar que el documento ha sido actualizado o modificado
+#
+#Configuracion Basica de un servidor Apache
+#      Creamos una carpeta Raiz para el servidor en /var/www/prueba.com/html
+#      Creamos un archivo para nuestro VirtualHost en /etc/apache2/sites-available/prueba.conf
+#      Copia y pega dentro
+#      <VirtualHost *:80>
+#            ServerAdmin admin@pruebas.com
+#            ServerName prueba.com
+#            ServerAlias www.prueba.com
+#            DocumentRoot /var/www/prueba.com/html
+#      </VirtualHost>
+#      Crea un index.html en esa carpeta
+#      Habilita el sitio con a2ensite prueba.conf
+#      Deshabilitamos el sitio por defecto con a2dissite 000-default.c
+#
+#      Para tener dos virtual host solo tenemos que duplicar y ponerlo en el /etc/hosts
+
 
 Comandos ngnix 
       nginx -v : Version de nginx
@@ -94,13 +139,13 @@ Tipos de usuarios FTP
             Del propio sistema 
       Virtuales
             Exclusivo del servidor FTP
+
 FTP con certificados.
 Descomentar directiva tls.conf
 Activar Directiva TLSEngine, TLSLog y TLSProtocol linea 27 y 28 y linea 49
 proftpd-gencert
 permisos 600 al archivo .key generado
-/etc/ssl/certs permisos 644 al .crt generado
-
+/etc/ssl/certs permisos 644 al .crt generad
 apt-get install proftpd-mod-crypto 
 descomentar linea 8 proftpd.conf
 añadir RequireValidShell      off a proftpd.conf
@@ -172,6 +217,14 @@ Para conectar al servidor y configurarlo ponemos en la IP 127.0.0.1 y el puerto 
 Una vez en la pantalla, haremos click en Server->Configurar
 Añadimos una fila con nuestra IP, el puerto 21 y la primera de las tres opciones del desplegable
 Si todo ha salido bien y hacemos netstat -a saldria nuestra IP y el puerto 21 a la escucha
+
+
+Codigos de Error de FTP
+22X- Conexion correcta
+120- Servidor espera x minutos
+331-Usuario Correcto pero esperando a la Contraseña
+550-No hay respuesta(Normalmente porque no se encuentra un recurso)
+
 
 Tema 4 Documentacion
 Javadoc PhpDoc Doxygen
