@@ -1,0 +1,89 @@
+html{
+    background-color: var(--mainColor);
+    font-family: Ubuntu;
+    --mainColor: #455a64;
+    --mainLightColor: #718792;
+    --mainDarkColor: #1c313a;
+    --secondaryColor: #ffb300;
+    --secondaryLightColor: #ffe54c;
+    --secondaryDarkColor : #c68400;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    
+}
+#hamburguesa{
+    display:none;
+}
+.icono{
+    font-size:48px !important;
+}
+#logo{
+    width:50px;
+    height:50px;
+}
+#header{
+    height: 10%;
+    background-color: var(--secondaryDarkColor);
+    justify-content:space-between;
+    padding-left:5%;
+    padding-right:5%;
+}
+
+#botonera{
+    display: flex;
+    align-items: center;
+}
+#botonera a{
+    margin:3px;
+}
+.link:hover{
+    background-color: var(--mainDarkColor);
+    color:white;
+}
+#main{
+    background-color: var(--mainLightColor);
+}
+.container{
+    display: flex;
+    padding:1%;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+.image{
+    width: 100%;
+    padding:2px;
+}
+.columna{
+    flex-direction:column;
+}
+#footer{
+    height: 10%;
+    background-color: var(--secondaryLightColor)
+}
+@media (min-width: 801px){
+    .columna{
+        width: 23%;
+    }
+}
+
+@media (max-width: 800px){
+    .columna{
+        width: 48%;
+    }
+    #botonera{
+        display:flex;
+    }
+}
+@media(max-width: 600px){
+    .columna{
+        width:98%;
+    }
+    #botonera{
+        display:none;
+    }
+    #hamburguesa{
+        display:block;
+    }
+}

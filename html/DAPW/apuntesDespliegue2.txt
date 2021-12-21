@@ -1,0 +1,21 @@
+Control de Versiones
+
+Version: Estado del producto en un momento dado.
+    Alfa: Probada en un entorno controlado
+    Beta: Probada en un entorno no controlado
+Repositorio: Lugar de almacenamiento del codigo
+Rama/Branch: Flujos de trabajo independiente que parten de una version del proyecto determinada
+Cambio: Modificacion de un recurso del proyecto
+Conflictos: Cambios contradictorios dentro del mismo recurso
+Revision: Versiones del proyecto
+
+Tipos de sistemas de control de versiones
+    Manual
+    Sistemas gestionados
+        Local: El repositorio no se comparte con tercero y esta instalado en la maquina y normalmente para un unico proyecto, backup estructurado de los recursos
+        del proyecto, permite controlar versiones y ramas.
+        Centralizado: El repositorio es unico y reside en un servidor central, la figura del jefe de proyecto es el encargado de aprobar los cambios que hayan de realizarse
+        al repositorio. CVS, SVN y GitHub
+        Distribuido: En el existen multiples repositorios y cada trabajador tiene un repositorio concreto, no dependemos de un unico servidor central, podemos realizar acciones
+        entre los repositorios existentes y tenemos que estar preparados para solucionar conflictos en caso de que surjan. Git, Mercurial, Monotone. 
+
