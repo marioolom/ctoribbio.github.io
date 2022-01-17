@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Extra 2 Tema 6</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen" />
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
+</head>
+
+<body>
+
+    <div class="container" id="formularioR">
+        <form id="form" action="/">
+            <h1>Registro</h1>
+            <div class="input-control">
+                <label for="name">Nombre</label>
+                <input id="name" name="name" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="surname1">Apellido 1</label>
+                <input id="surname1" name="surname1" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="surname2">Apellido 2</label>
+                <input id="surname2" name="surname2" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="birthdate">Birthdate</label>
+                <input id="birthdate" name="birthdate" type="date" max="2022-01-13">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="telf">Numero de Telefono</label>
+                <input id="telf" name="telf" type="text">
+                <div class="error"></div>
+            </div>
+            <button id="submit" type="submit">Enviar y nuevo</button>
+            <button type="reset">Borrar</button>
+        </form>
+       
+    </div>
+    <button id="btnTabla">Enviar y mostrar</button>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

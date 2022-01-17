@@ -33,7 +33,7 @@ form.addEventListener('submit', e => {
     validateForm();
 });
 
-f
+
 
 const validateForm = () => {
     const usernameValue = username.value.trim();
