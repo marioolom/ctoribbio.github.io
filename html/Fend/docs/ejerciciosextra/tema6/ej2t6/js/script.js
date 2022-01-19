@@ -8,6 +8,60 @@ const telf = document.getElementById('telf');
 const hobby = document.getElementById('hobby');
 const form = document.getElementById('form');
 const btnSubmit = document.getElementById('submit');
+const avisoL = document.getElementById('avisoL');
+const addHobby = document.getElementById('addHobby');
+
+addHobby.addEventListener('click',e => {
+    e.preventDefault();
+    nuevaAficion();
+})
+
+var arrayBotones= new Array();
+arrayBotones=document.querySelectorAll(".borrar");
+
+for(var i=0; i<arrayBotones.length; i++){
+    arrayBotones[i].addEventListener("click", e=>{
+        borrarAficion(e);
+    })
+}
+
+function borrarAficion(event) {
+    event.target.parentElement.remove();
+}
+
+function nuevaAficion(){
+    var hobbyValue = hobby.value.trim();
+
+    if(!checkEmptyValue(hobbyValue)){
+
+        var div = document.createElement("div");
+        div.classList.add("containerAficiones");
+    
+        var span = document.createElement("span");
+        span.setAttribute("id", "nombreAficion");
+        span.innerText = hobbyValue;
+    
+        var div2= document.createElement("div");
+        div2.innerText= "X";
+        div2.classList.add("borrar");
+    
+    
+        div2.addEventListener("click", e=>{
+            borrarAficion(e);
+        });
+    
+        div.appendChild(span);
+        div.appendChild(div2);
+        
+        hobby.value ="";
+        hobby.insertAdjacentElement("beforebegin", div);
+        printSuccess(hobby);
+    
+    }else{
+        printError(hobby, "La aficion no puede estar vacia");
+    }
+}
+
 
 telf.addEventListener("blur", e => {
     telfNumAction(0,"telf");
@@ -19,10 +73,14 @@ telf.addEventListener("focus", e => {
 
 var validated = false;
 document.getElementById("age").disabled = true;
-form.addEventListener('submit', e => {
+btnSubmit.addEventListener('click', e => {
     e.preventDefault();
-
-    validateForm();
+    if(!avisoL.checked){
+        printError(avisoL.parentElement,"Tienes que aceptar el aviso legal");
+    }else{
+        printSuccess(avisoL.parentElement);
+        validateForm();
+    }
 });
 birthdate.addEventListener("blur", e => {
     setAge();
@@ -200,6 +258,27 @@ function validateForm() {
     const birthdateValue = birthdate.value.trim();
     const telfValue = telf.value.trim();
     const hobbyValue = hobby.value.trim();
+
+    const hijos = document.getElementsByName("hijos");
+    var bool=false;
+    for( i = 0; i < hijos.length; i++){
+        if(hijos[i].checked){
+            bool=true;
+        }
+    }
+    
+    if(!bool){
+        printError(hijos[0].parentElement.parentElement, "Selecciona alguna de las opciones");
+    }else{
+        printSuccess(hijos[0].parentElement.parentElement);
+    }
+    
+    if(checkEmptyValue(telfValue)){
+        printError(telf,"El numero de telefono es obligatorio");
+    }
+    if(checkEmptyValue(expNum.value.trim())){
+        printError(expNum,"El numero de expediente es obligatorio");
+    }
 
     //validar nombre
     if (checkEmptyValue(nameValue)) {

@@ -1,69 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Ejercicio Extra 2 Tema 6</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Extra 2 Tema 6</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen" />
+    </head>
 
-<body>
+    <body>
 
-    <div class="container">
-        <form id="form" action="/">
-            <h1>Registro</h1>
-            <div class="input-control">
-                <label for="name">Nombre</label>
-                <input id="name" name="name" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="surname1">Apellido 1</label>
-                <input id="surname1" name="surname1" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="surname2">Apellido 2</label>
-                <input id="surname2" name="surname2" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="surname2">Nº de Expediente</label>
-                <input id="expNum" name="expNum" type="number">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="birthdate">Birthdate</label>
-                <input id="birthdate" name="birthdate" type="date" max="2022-01-13">
-                <div class="error"></div>
-            </div>
-            <div class="input-control" id="ageC">
-                <label for="age">Edad</label>
-                <input id="age" name="age" type="number">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="telf">Numero de Telefono</label>
-                <input id="telf" name="telf" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="hobby">Aficiones</label>
-                <input id="hobby"name="hobby" type="textarea">
-                <button id="addHobby">Añadir +</button>
-                <div class="error"></div>
-            </div>
-            <button id="submit" type="submit">Registrar</button>
-            <button type="reset">Borrar</button>
-        </form>
-    </div>
+        <div class="container">
+            <form id="form" action="/">
+                <h1>Registro</h1>
+                <div class="input-control">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="surname1">Apellido 1</label>
+                    <input id="surname1" name="surname1" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="surname2">Apellido 2</label>
+                    <input id="surname2" name="surname2" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="surname2">Nº de Expediente</label>
+                    <input id="expNum" name="expNum" type="number">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="birthdate">Birthdate</label>
+                    <input id="birthdate" name="birthdate" type="date" max="2022-01-13">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control" id="ageC">
+                    <label for="age">Edad</label>
+                    <input id="age" name="age" type="number">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="telf">Numero de Telefono</label>
+                    <input id="telf" name="telf" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="hobby">Aficiones</label>
+                    <div class="containerAficiones">
+                        <span id="nombreAficion">Futbol</span>
+                        <div class="borrar">X</div>
+                    </div>
+                    <input id="hobby" name="hobby" type="text">
+                    <button id="addHobby">Añadir +</button>
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="hijos">Hijos</label>
+                    <div class="radioButon">
+                        <div class="opcionR">
+                            <label for="si">Si</label>
+                            <input type="radio" class="hijos" name="hijos" value="si" />
+                        </div>
+                        <div class="opcionR">
+                            <label for="si">No</label>
+                            <input type="radio" name="hijos" value="no" class="hijos" />
+                        </div>
+                    </div>
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <div class="aviso">
+                        <input type="checkbox" id="avisoL" class="check" name="aviso" value="1">
+                        <label for="aviso"><a href="google.es" target="_blank">Aviso Legal</a></label>
+                    </div>
+                    <div class="error"></div>
+                </div>
+                <button id="submit">Registrar</button>
+                <button type="reset">Borrar</button>
+            </form>
+        </div>
 
-<script type="text/javascript" src="js/script.js"></script>
-</body>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
 
 </html>

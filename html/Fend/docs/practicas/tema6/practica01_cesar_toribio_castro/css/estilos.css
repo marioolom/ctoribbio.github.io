@@ -65,3 +65,18 @@ body {
     height: 600px;
 
 }
+
+
+.opcionR{
+    width: 50%;
+    display: flex !important;
+}
+.radioButon ,.aviso{
+    display: flex;
+}
+
+.hijos,.check{
+    width: 10% !important;
+    margin-left: 15px;
+    padding: auto;
+}
