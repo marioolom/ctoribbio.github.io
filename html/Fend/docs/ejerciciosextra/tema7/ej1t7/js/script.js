@@ -1,6 +1,6 @@
 function validateForm(){
     if(validateEmail()&&validatePass()&&validateUser()){
-        alert("Bienvenido al sistema ");
+        alert("Bienvenido al sistema\n Usuario: "+sessionStorage.getItem("email")+"\n Contraseña: "+sessionStorage.getItem("password"));
     }
 }
 
@@ -12,7 +12,9 @@ if(campoEmail.value.trim()==""){
     return false;
 }else{
     if(/^[\w-\.\+]+@([\w-]+\.)+[\w-]{2,4}$/.test(campoEmail.value.trim())){
+        sessionStorage.setItem("email",campoEmail.value.trim());
         return true;
+        
     }else{
      alert("Email no valido");
      return false;
@@ -31,7 +33,10 @@ if(campoPass.value.trim()=="" ||campoPass2.value.trim()==""){
         if(campoPass.value.trim()!=campoPass2.value.trim()){
             alert("Tienes que repetir la mismca contraseña en ambos campos");
         }else{
+            
+            sessionStorage.setItem("pass",campoPass.value.trim());
             return true;
+            
         }
     }else{
         alert("La contraseña tiene que contener minimo 8 caracteres, un caracter en mayusculas, uno en minusculas y un caracter especial");
@@ -61,3 +66,4 @@ bsub.addEventListener("click",(e)=>{
     e.preventDefault();
     validateForm();
 })
+
