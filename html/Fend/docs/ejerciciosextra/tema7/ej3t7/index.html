@@ -5,20 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario 1</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form method="" id='form'>
-        <fieldset>
-            <legend>Agregar Tareas</legend>
-            <label for="taskTitle">Nombre Tarea</label>
-            <input type="text" name="taskTitle" id="taskTitle" placeholder="Titulo">
-            <label for="taskDescription">Descripcion Tarea</label>
-            <input type="text" name="taskDescription" id="taskDescription" placeholder="Descripcion">
-            <button type="submit" id="btnSubmit">Añadir</button>
-        </fieldset>
-        
-    </form>
-    <div id="taskBar"></div>
+    <main>
+        <div class="taskMGR">
+            <form method="" id='form'>
+                <fieldset>
+                    <legend>Agregar Tareas</legend>
+                    <label for="taskTitle">Nombre Tarea</label>
+                    <input type="text" name="taskTitle" id="taskTitle" placeholder="Titulo"><br>
+                    <label for="taskDescription">Descripcion Tarea</label>
+                    <textarea name="taskDescription" id="taskDescription" placeholder="Descripcion"></textarea><br>
+                    <button type="submit" id="btnSubmit">Añadir</button>
+                </fieldset>
+                
+            </form>
+        </div>
+        <div class="taskBar">
+            <div class="mainTitle">Tareas Pendientes</div>
+            <div class="headers">
+                <div class="header elemento">Titulo</div>
+                <div class="header elemento descripcion">Descripcion</div>
+                <div class="header elemento">Borrar</div>
+                <div class="header elemento">Modificar</div>
+            </div>
+        </div>
+    </main>
     <script type='text/javascript' src="js/script.js"></script>
 </body>
 </html>

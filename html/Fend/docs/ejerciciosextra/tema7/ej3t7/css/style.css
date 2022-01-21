@@ -1,0 +1,53 @@
+main{
+    display : flex;
+}
+
+.taskMGR{
+    width: 30%;
+    flex-direction: column;
+}
+
+.taskBar{
+    width:70%
+}
+
+.tarea{
+    width:100%;
+    display: flex;
+    border: 1px solid black;
+    
+}
+.headers{
+    display: flex;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.modificar{
+    color:white;
+    background-color:blue!important;
+}
+
+.borrar{
+    text-align: center;
+}
+.elemento{
+    width:15%;
+    padding : 2px;
+    background-color: darkgrey;
+    border: 1px solid grey;
+}
+
+.mainTitle{
+    font-size: 20px;
+    text-align: center;
+}
+.descripcion{
+    width: 70% !important;
+}
+
+.borrar{
+    background-color: red;
+    color: white;
+}
