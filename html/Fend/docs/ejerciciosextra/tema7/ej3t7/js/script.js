@@ -10,15 +10,11 @@ class Task {
     getDesc() { return this.taskDescription; }
 }
 
-
+var taskList = new Array();
 if(localStorage.getItem("tasklist") != undefined){
-    var taskList = new Array();
     taskList = JSON.parse(localStorage.getItem("tasklist"));
     reloadTaskBar();
-}else{
-    var taskList = new Array();
 }
-
 
 function addTask(name, description) {
     var name = document.getElementById("taskTitle").value.trim();
@@ -123,4 +119,5 @@ var button = document.getElementById("btnSubmit");
 button.addEventListener("click", e => {
     e.preventDefault();
     addTask();
+    form.reset();
 })
