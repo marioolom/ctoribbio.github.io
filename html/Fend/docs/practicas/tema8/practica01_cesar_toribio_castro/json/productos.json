@@ -1,0 +1,122 @@
+[
+    {
+        "vino": "Quinta Quietud Reserva 2015",
+        "bodega": "Quinta de la Quietud",
+        "denominacion": "Toro",
+        "precio": "16,5",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/q/u/quinta-quietud.jpg",
+        "desc": "Por primera vez en el Club, te acercamos el proyecto de Quinta de la Quietud, una bodega asentada en una de las mejores áreas de la D.O. Toro que apuesta por la uva musa de la zona en un concepto plenamente ecológico."
+    },
+    {
+        "vino": "Teso La Monja 2014",
+        "bodega": "Teso La Monja",
+        "denominacion": "Toro",
+        "precio": "980,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/t/e/teso_la_monja_1.jpg",
+        "desc": "En la imparable trayectoria de Marcos Eguren, Teso La Monja ha supuesto la cumbre. Presentamos la última añada de este un ‘toro’ portentoso, de elaboración biodinámica y de producción muy limitada: Teso La Monja 2014. Para los bolsillos holgados y los paladares caprichosos."
+    },
+    {
+        "vino": "Granza Tinta de Toro Crianza 2014",
+        "bodega": "Bodegas Granza",
+        "denominacion": "Toro",
+        "precio": "45,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/r/granza-tinta-de-toro-crianza.jpg",
+        "desc": "Firmado por el grupo Bodegas Familiares Matarromera, Granza Tinta de Toro Crianza 2014 es un vino elaborado con la variedad tinta de Toro en el corazón de la D.O. Toro."
+    },
+    {
+        "vino": "El Oso y La Alemana Blanco 2020",
+        "bodega": "Máquina & Tabla",
+        "denominacion": "Toro",
+        "precio": "58,20",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/l/el-oso-y-la-alemana-blanco-sc_2.jpg",
+        "desc": "El Oso y La Alemana Blanco 2020 es una de las últimas novedades de la pareja formada por Oriol Illa y Susana Pastor en la zona de Toro. Surge después de un viaje a Berlín (el oso es símbolo de la ciudad) para disfrutar de un concierto. Así, a la vuelta, en sus cabezas, aparece la idea de crear un vino blanco con el que disfrutar de un buen concierto o un evento y en cualquier lugar o situación. De esta manera, nace El Oso y La Alemana, un blanco intenso y sabroso, con gran frescura, potente y un carácter sin igual."
+    },
+    {
+        "vino": "La Felisa 2020",
+        "bodega": " Bodegas Emilio Moro",
+        "denominacion": "Ribera del Duero",
+        "precio": "74,55",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/a/la-felisa_2.jpg",
+        "desc": "La Felisa 2020 es un sentido tributo y un vino innovador. Concebido en homenaje a la figura de doña Felisa, la madre de José y Javier Moro, el primer tinto ecológico y libre de sulfitos añadidos de la bodega ribereña aúna el legado familiar con la apuesta por una vitivinicultura sostenible y respetuosa con el medio ambiente."
+    },
+    {
+        "vino": "Matarromera Prestigio 2016",
+        "bodega": "Bodega Matarromera",
+        "denominacion": "Ribera del Duero",
+        "precio": "49,90",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/a/matarromera-prestigio_2.jpg",
+        "desc": "Matarromera Prestigio 2016 es un tinto diseñado por el bodeguero Carlos Moro en la bodega primigenia de Bodegas Familiares Matarromera."
+    },
+    {
+        "vino": "Protos Roble 2020 Mágnum",
+        "bodega": "Bodegas Protos",
+        "denominacion": "Ribera del Duero",
+        "precio": "51,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/r/protos-roble-magnum_1.jpg",
+        "desc": "Protos Roble 2020 Mágnum es el benjamín de la familia de vinos Protos. Un tempranillo en estado puro del que te acercamos su última añada."
+    },
+    {
+        "vino": "Pazo das Bruxas Albariño 2021",
+        "bodega": "Familia Torres",
+        "denominacion": "Rías Baixas",
+        "precio": "59,40",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/a/pazo-das-bruxas_1_1_1_2_3.jpg",
+        "desc": "Pazo das Bruxas Albariño 2021 es un vino blanco que atesora todas las cualidades que han hecho de la uva reina de Rías Baixas, una de las variedades más apreciadas tanto de España como fuera de nuestras fronteras. Un fragante ejemplo de intensidad y frescura."
+    },
+    {
+        "vino": "Baladiña Albariño 2020",
+        "bodega": "Lagar de Besada",
+        "denominacion": "Rías Baixas",
+        "precio": "67,80",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/a/baladi_a-albari_o-blanco_2_2.jpg",
+        "desc": "La máxima expresión de la uva reina de Rías Baixas se materializa en Baladiña Albariño 2020, uno de los magníficos monovarietales que elabora la familia Ballesteros Sineiro en su bodega, firma pionera de la D.O. Los frutos de una selección de viñedos de más de 40 años de edad del Valle del Salnés, vinificados artesanalmente, con una crianza de 9 meses sobre sus lías en acero inoxidable, dieron un albariño de elegancia y complejidad extremas, con años por delante para sorprender y ser disfrutado."
+    },
+    {
+        "vino": "Añada de Baladiña Albariño 2011",
+        "bodega": "Lagar de Besada",
+        "denominacion": "Rías Baixas",
+        "precio": "72,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/_/a_ada-de-baladi_a-albari_o-blanco_2_1.jpg",
+        "desc": "Lagar de Besada sólo elabora su vino top con los frutos de vendimias de especial calidad. Es el caso de Añada de Baladiña Albariño 2011, una cosecha en Rías Baixas aromáticamente muy expresiva, de gran concentración frutal y una acidez inmejorable. Su larga permanencia de 24 meses sobre sus lías potenció todas estas cualidades dando lugar, finalmente, a un excepcional albariño de guarda de producción limitada. Complejo, equilibrado, sabroso y con un singular toque mineral. Para no perdértelo."
+    },
+    {
+        "vino": "Attis Embaixador 2020",
+        "bodega": "Attis Bodega y Viñedos",
+        "denominacion": "Rías Baixas",
+        "precio": "81,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/t/attis-embaixador_1_1_1.jpg",
+        "desc": "Complejo, serio y voluminoso, pero a la vez fresco, Attis Embaixador Albariño 2020 es un vino singular, fiel reflejo del peculiar viñedo del que procede, apenas media hectárea de viñas ecológicas, de más medio siglo de edad, ubicadas en el corazón del Valle del Salnés."
+    },
+    {
+        "vino": "Gregorio Martínez Finca Blanco 2017",
+        "bodega": "Bodegas Gregorio Martínez",
+        "denominacion": "Rioja",
+        "precio": "69,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/r/gregorio-martinez-finca-blanco_2.jpg",
+        "desc": "Gregorio Martínez Finca Blanco 2017 es un vino complejo y con una magnífica evolución en botella, elaborado a partir de la recuperación de una sabia mezcla de variedades blancas tradicionalmente empleadas en Rioja: garnacha blanca, malvasía, viura, palomino, maturana y torrontés. Bodegas Gregorio Martínez seleccionó manualmente sus mejores frutos de un total de 20 microparcelas, plantadas entre 1904 y 1945, con diferentes orientaciones, a 550 metros de altitud, en una de las mejores zonas de la D.O.Ca. 20 meses de crianza sobre sus lías, 16 de ellos en roble, lo convirtieron en un rioja blanco intenso, fresco, muy frutal y de paso largo."
+    },
+    {
+        "vino": "Colección Benjamín Romeo",
+        "bodega": "Bodega Contador",
+        "denominacion": "Rioja",
+        "precio": "20,83",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/colecci_n-benjam_n-romeo-lote-4-botellas-sc_2.jpg",
+        "desc": "Los adeptos a las ejemplares elaboraciones de Bodegas Contador tienen en esta Colección Benjamín Romeo una magnífica ocasión para degustar una selección exclusiva y limitada formada por cuatro excelsos tintos diseñados por el prestigioso viticultor y enólogo riojano, alma máter de la firma.\n\nEsta magnífica colección de Bodegas Contador está integrada por vinos únicos que son el fiel reflejo de cada una de sus parcelas de origen. Un terroir que es el pilar fundamental de este mimado proyecto de la bodega asentada en la D.O.Ca. Rioja, y personalmente supervisado por el propio Benjamín Romeo."
+    },
+    {
+        "vino": "Qué Bonito Cacareaba 2020",
+        "bodega": "Bodega Contador",
+        "denominacion": "Rioja",
+        "precio": "54,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/q/u/qu_-bonito-cacareaba-blanco-2018-sc_2.jpg",
+        "desc": "Qué Bonito Cacareaba 2020 es el gran blanco de Bodega Contador elaborado a partir de un trío de variedades riojanas. Los frutos de garnacha blanca, viura y malvasía que integran este magnífico vino proceden de viñedos viejos y de bajo rendimiento de los municipios de San Vicente de la Sonsierra, Leza y Briones, en una de las mejores zonas de producción de la D.O.Ca. Rioja."
+    },
+    {
+        "vino": "Secastilla 2016",
+        "bodega": "Viñas del Vero",
+        "denominacion": "Somontano",
+        "precio": "75,00",
+        "img": "https://www.vinoseleccion.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/e/secastilla_2.jpg",
+        "desc": "Desde el Somontano, te presentamos el tinto de tirada más limitada de la imprescindible bodega Viñas del Vero, Secastilla 2016."
+    }
+]

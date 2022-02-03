@@ -1,0 +1,27 @@
+[
+    {
+        "denominacion": "Toro",
+        "region": "Castilla y León",
+        "info": "La D.O. Toro, creada en 1987, comprende doce municipios de Zamora y tres de Valladolid que corresponden con la comarca del Bajo Duero. El río cruza la región de este a oeste, y la D.O. queda ubicada al sur. La D.O. Toro es famosa por la producción de vinos tintos a partir de la uva local tinta de Toro, aunque también ampara la producción de rosados y blancos (minoritarios). Los tintos, conocidos tradicionalmente por su potencia, han experimentado una notable modernización en los últimos años y ahora destacan también por su elegancia y complejidad, sobre todo en el caso de los vinos con medias y largas crianzas."
+    },
+    {
+        "denominacion": "Ribera del Duero",
+        "region": "Castilla y León",
+        "info": "Aunque los orígenes vitivinícolas de la Ribera del Duero se remontan a la época de los romanos, no es hasta 1975 cuando un grupo de elaboradores locales, conscientes del enorme salto de calidad que habían dado en los últimos años, comenzó a plantearse seriamente la creación de una Denominación de Origen que amparara los vinos de la zona. Bodegas como Vega Sicilia, Hermanos Pérez Pascuas, Protos o Torremilanos fueron algunos de los principales impulsores de una iniciativa que se materializó en 1982 y marcó un antes y un después en la historia del vino español. Hoy, la D. O. Ribera del Duero puede presumir de ser una de las Denominaciones de Origen vinícolas más importantes del mundo. Más de 300 bodegas forman parte de esta demarcación situada en la cuenca del río Duero y seleccionada como Mejor Región Vitícola del Mundo en 2012.\n\nAunque sus vinos sólo se elaboran en cuatro provincias (Valladolid, Segovia, Burgos y Soria), no conocen fronteras gracias a la enorme fama que han adquirido en las últimas dos décadas. Continúan surgiendo nuevas bodegas que siguen la línea impuesta por las más veteranas, aquellas que han hecho que un vino de Ribera del Duero sea fácilmente reconocible gracias a su especial personalidad.\n\nEl tinto es el vino estrella de la denominación, elaborado fundamentalmente a partir de la uva tempranillo (tinto fino), aunque el consejo regulador también admite las variedades cabernet sauvignon, malbec, garnacha y merlot."
+    },
+    {
+        "denominacion": "Rías Baixas",
+        "region": "Galicia",
+        "info": "La D.O. Rías Baixas (1988) se ubica en la parte suroccidental de la provincia de Pontevedra, y engloba cinco subzonas: Val do Salnés, Condado do Tea, O Rosal, Soutomaior y Ribeira do Ulla. La Subzona Val do Salnés es la gran zona productora, con más del 50% de la superficie y el 70% de los viticultores.\n\nLa variedad que da fama universal a esta denominación de origen es la blanca albariño: la producción de albariño supone el 96% de la producción total. Tintos y espumosos son muy minoritarios."
+    },
+    {
+        "denominacion": "Rioja",
+        "region": "La Rioja",
+        "info": "Rioja fue la primera Denominación de Origen Calificada de nuestro país. La D.O.Ca. Rioja está dividida en tres subzonas perfectamente delimitadas por sus diferentes condiciones geográficas y climatológicas: Rioja Alta, Rioja Alavesa y Rioja Baja. La primera concentra casi la mitad de la producción total y es idónea para la elaboración de vinos aptos para la crianza en madera, con buen cuerpo y acidez elevada. Rioja Baja, con un 30%, produce los tintos y rosados con mayor graduación y extracto de toda la D.O. Por su parte, Rioja Alavesa supone un 20% de la producción y es la cuna de algunos de los mejores vinos con crianza en madera de la región y de los tradicionales tintos de maceración carbónica.\n\nLa producción media actual de la D.O.Ca. Rioja se sitúa entre 280 y 300 millones de litros, de los que el 90% corresponde a vino tinto y el resto a blanco y rosado."
+    },
+    {
+        "denominacion": "Somontano",
+        "region": "Aragon",
+        "info": "La Denominación de Origen Somontano fue fundada en 1984 y ampara la producción de vinos en 43 municipios enclavados en la comarca del Somontano (Huesca), en torno a la localidad de Barbastro. Esta denominación se caracterizó desde sus inicios por su apuesta innovadora y por la introducción de variedades de uva internacionales, como la chardonnay, merlot y cabernet sauvignon. Están aceptadas un total de 15 variedades de uva, siendo las tintas las mayoritarias en los viñedos.\n\nAmparados por la D.O. Somontano se elaboran vinos blancos, rosados y tintos. Los blancos más destacados son los elaborados con la uva chardonnay. En cuanto a los tintos, destacan los elaborados con las uvas internacionales, en ocasiones mezcladas con las uvas locales. También encontramos tintos tradicionales elaborados con uvas locales como la moristel, tempranillo y parraleta."
+    }
+]
