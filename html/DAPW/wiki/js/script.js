@@ -1,30 +1,37 @@
 var boton = document.getElementsByClassName("listItem");
 var entries = document.getElementsByClassName("entry");
-var req = new XMLHttpRequest();
+var json;
+window.onload = function() {
+    var req = new XMLHttpRequest();
+    req.open("GET", "json/entries.json", true);
+
+    req.send();
+
+    req.onload = function () {
+        if (req.status === 200 && req.readyState == 4) {
+            json = JSON.parse(req.responseText);
+        } else {
+            console.error("Error Linea 14")
+        }
+
+    }
+}
+
+
+
+
+
 
 
 function updateContent(id,title) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'entries.xml', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            if (xhr.status != 200) {
-                console.error("err")
-            } 
-            else {
-                var xml = xhr.responseXML;
-                var elements = xml.getElementsByTagName("entry");
-                for(var i=0;i<elements.length;i++) {
-                    if(elements[i].getElementsByTagName("title")[0].textContent==id){
-                        document.getElementById("wiki_text").textContent = elements[i].getElementsByTagName("description")[0].textContent
+    console.log(Object.values(json[0]));
+                for(var i=0;i<json.length;i++) {
+                    if(Object.values(json[i])[0]==id){
+                        document.getElementById("wiki_text").textContent = Object.values(json[i])[1];
                         document.getElementById("wiki_title").textContent = title
                     }
                 }
             }
-        }
-    };
-    xhr.send();
-}
 
 for(var i = 0; i < boton.length; i++) {
     boton[i].addEventListener("click",(e) => {
