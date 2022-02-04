@@ -19,3 +19,63 @@ Tipos de sistemas de control de versiones
         Distribuido: En el existen multiples repositorios y cada trabajador tiene un repositorio concreto, no dependemos de un unico servidor central, podemos realizar acciones
         entre los repositorios existentes y tenemos que estar preparados para solucionar conflictos en caso de que surjan. Git, Mercurial, Monotone. 
 
+Control de versiones en VSCode
+    Para abrir una consola de VScode: Barra de herramientas>Terminal>Nuevo terminal
+    Para inicializar el repositorio local hacemos git init
+    Para configurar el usuario
+        username : git config user.name "username"
+        email: git config user.email "email"
+    Si usamos el modificador --global podremos cambiar la configuracion general, no solo del repositorio
+    Para llevar un fichero al area de stage:
+        git status para comprobar el estado de los ficheros del proyecto
+        git add nombre_del_fichero para añadirlo al area de stage
+        git status para comprobarlo de nuevo
+    Para hacer un commit:
+        git commit -m "mensaje del commit" 
+        git commit -am "mensaje del commit" (Hace el add y el commit a la vez)
+    Para ver el historial de commits:
+        git log
+        git log --oneline (Solo una linea, mas compacto)
+        git log --oneline --decorate --all --graph ()
+        git log -p (Informe detallado del commit)
+        git log - p -n<numero> (Mismo que git log -p pero solo un numero concreto )
+        git reflog
+
+    Para el status de los ficheros 
+        git status
+        git status -s (Short)
+        git status -sb (Short Branch)
+    Para borrar los cambios no guardados:
+        git restore <ruta>
+    Para añadir nuestro repositorio local a github
+        crear repo en github, conseguir el link
+        git remote add origin <url directorio>
+        git remote -v
+        git branch -M main
+        git push -u origin main
+    Para volver a cualquier commit de la historia:
+        git reset --hard <hash del commit>
+    Si queremos conocer los commits despues de volver atrás usamos:
+        git reflog
+    Y podremos volver al commit de despues con git reset
+    Para ver los cambios que ha sufrido un fichero antes del commit:
+        git diff <ruta>
+    Para ver los cambios en los ficheros que esten en el stage usamos:
+        git diff --staged
+    Podemos comparar con diff al estado de otro commit usando su hash
+        git diff [--staged] <ruta> <hash>
+    Podemos hacer el equivalente a un git pull usando los comandos git fetch y git merge
+
+    Para guardar una version utilizamos:
+        git tag 1.0 -m "version 1.0"
+        git push --tags
+    Asi podremos acceder directamente en github
+
+    Los pasos logicos para trabajar en un proyecto serian:
+        git pull (actualizarme)
+        trabajamos
+        git commit -m "mensaje"(guardamos el repo local)
+        git push (enviar los datos)
+
+    Si hace
+    git rm --cached nombre_del_fichero para borrarlo del stage
