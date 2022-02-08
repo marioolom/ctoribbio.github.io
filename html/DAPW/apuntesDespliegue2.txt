@@ -96,3 +96,7 @@ Control de versiones en VSCode
         git stash push <fichero>
         git stash list
         git stash pop [<nombre fichero>]
+    Para recolocar una rama al momento actual
+        git checkout <rama a recolocar>
+        git rebase <rama de referencia> la referencia puede ser main
+        
