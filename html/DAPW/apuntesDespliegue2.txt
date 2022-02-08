@@ -40,7 +40,8 @@ Control de versiones en VSCode
         git log -p (Informe detallado del commit)
         git log - p -n<numero> (Mismo que git log -p pero solo un numero concreto )
         git reflog
-
+        git log --author=<nombre> para ver los commits de un autor
+        git log --pretty=oneline --graph --decorate --all
     Para el status de los ficheros 
         git status
         git status -s (Short)
@@ -71,11 +72,27 @@ Control de versiones en VSCode
         git push --tags
     Asi podremos acceder directamente en github
 
+    git rm --cached nombre_del_fichero para borrarlo del stage
     Los pasos logicos para trabajar en un proyecto serian:
         git pull (actualizarme)
         trabajamos
         git commit -m "mensaje"(guardamos el repo local)
         git push (enviar los datos)
 
-    Si hace
-    git rm --cached nombre_del_fichero para borrarlo del stage
+    Ramas en Git
+        git branch nombreRama para crear una rama
+        git branch para ver las ramas
+        git checkout nombreRama para movernos entre las ramas
+    Para unir dos ramas.
+        Nos colocamos en la principal con git checkout main
+        Luego hacemos git merge segundaRama
+    Deshacer confirmaciones
+        git revert <hash> Para volver al commit que queramos volver
+    Para unir rapidamente cosas de otra rama
+        git cherry-pick
+    Para crear aliases de git se utiliza
+        git config --global alias.<alias> <comando git>
+    Para trabajar con el stash
+        git stash push <fichero>
+        git stash list
+        git stash pop [<nombre fichero>]
