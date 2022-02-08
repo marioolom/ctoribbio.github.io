@@ -1,19 +1,18 @@
 [
-    {
-        "entry": [
-          {
-            "title": "devops",
-            "description": "DEVOPS It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-          },
-          {
-            "title": "devops 2",
-            "description": "DEVOPS It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-          },
-          {
-            "title": "devops 3",
-            "description": "DEVOPS It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-          }
-        ]
-      }
+  {
+    "title": "modeloCS",
+    "description": "La arquitectura cliente-servidor es un modelo de diseño en el que las tareas que han de llevarse a cabo para que la página web se muestre apropiadamente y cumpla sus funciones se dividen entre un <b>servidor</b> que realiza determinadas tareas y un <b>cliente</b> que lleva a cabo otras tareas.<br>Algunos tipos de aplicaciones que funcionan con este modelo son por ejemplo los clientes de <b>correo eléctronico o la WWW</b><br><br> Ventajas de la arquitectura cliente-servidor: <ul> <li>El control está centralizado en el servidor</li> <li>Se facilita la escabilidaad</li> <li>Fácil mantenimiento.</li> <li>No se duplican los datos</li> <li>Bajo coste de los servicios</li> </ul> Desventajas de la arquitectura cliente-servidor: <ul> <li>Dependemos del ancho de banda de los extremos</li> <li>El servidor web tiene un número limitado de conexiones</li> <li>Gasto económico elevado en software y hardware y especifico del servidor</li> <li>El servidor nunca va a poder acceder a los recursos del cliente</li> </ul> En este modelo existen 4 niveles diferenciados en el servidor: <ol> <li>Servidor de Aplicaciones (PHP)</li> <li>Servidor Gestor de BBDD (MySQL)</li> <li>Servidor Web (Apache)</li> <li>Sistema Operativo (Linux)</li> </ol> A esto se le llama la pila de aplicaciones, por ejemplo, la que acabamos de definir arriba, es un LAMP Stack, LAMP viene de las siglas de cada una de las partes de la pila.<br> <h4>Ejemplos de Arquitecturas</h4> <table> <tr> <th>Nombre</th> <th>Cliente</th> <th>S.Web</th> <th>S.Aplicaciones</th> <th>SGBD</th> <th>Sistema Operativo</th> <th>Leng. Programacion</th> </tr> <tr> <td>LEMP</td> <td>Firefox</td> <td>Nginx</td> <td>PHP</td> <td>MariaDB</td> <td>Linux</td> <td>PHP</td> </tr> <tr> <td>MAMP</td> <td>Chrome</td> <td>Apache</td> <td>PHP</td> <td>MySQL</td> <td>MacOS</td> <td>PHP</td> </tr> <tr> <td>WISA</td> <td>Internet Explorer</td> <td>IIS</td> <td>ASP.Net</td> <td>SQLServer</td> <td>Windows</td> <td>ASP.Net</td> </tr> <tr> <td>LAMP</td> <td>Opera</td> <td>Apache</td> <td>Perl</td> <td>MySQL</td> <td>Linux</td> <td>Perl</td> </tr> </table>"
+  },
+  {
+    "title": "devops",
+    "description": ""
+  },
+  {
+    "title": "curl",
+    "description": "DEVOPS It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+  },
+  {
+    "title": "tamper",
+    "description": "DEVOPS It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+  }
 ]
-

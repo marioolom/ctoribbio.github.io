@@ -24,11 +24,12 @@ window.onload = function() {
 
 
 function updateContent(id,title) {
-    console.log(Object.values(json[0]));
                 for(var i=0;i<json.length;i++) {
-                    if(Object.values(json[i])[0]==id){
-                        document.getElementById("wiki_text").textContent = Object.values(json[i])[1];
+                    if(json[i].title == id){
+                        document.getElementById("wiki_text").innerHTML = json[i].description;
                         document.getElementById("wiki_title").textContent = title
+                    }else{
+                        console.log(id);
                     }
                 }
             }

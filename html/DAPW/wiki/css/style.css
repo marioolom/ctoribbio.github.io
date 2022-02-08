@@ -49,9 +49,11 @@ footer{
     font-size: 26px;
 }
 .wiki_content{
-    height:80%;
+    height:100%;
 }
 .container{
     border: 1px solid black;
 }
-
+table,th,td{
+    border:1px solid black;
+}
