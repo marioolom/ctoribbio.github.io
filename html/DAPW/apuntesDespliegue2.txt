@@ -99,4 +99,28 @@ Control de versiones en VSCode
     Para recolocar una rama al momento actual
         git checkout <rama a recolocar>
         git rebase <rama de referencia> la referencia puede ser main
+
+
+
+
+Usar Node como un servidor
+
+npm es node package manager y sirve para instalar y gestionar paquetes en proyectos node
+
+npm i <paquete> para instalar un paquete 
+npx <paquete> para lanzar los paquetes directamente
+
+node <aplicacion> para lanzar una aplicacion
+
+nodemon es un paquete para gestionar el servidor
+    npm i nodemon
+
+nodemon:
+    npx nodemon app.js para lanzarlo 
+    una vez iniciado:
+        rs para reiniciar
+        npx nodemon --inspect app.js para depurar
+Para hacer que el server responda un fichero: 
+    npm i express
+    
         
