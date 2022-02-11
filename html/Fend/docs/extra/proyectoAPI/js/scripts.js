@@ -1,3 +1,5 @@
+
+
 function getData(){
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
@@ -109,9 +111,7 @@ window.onload = function(){
 }
 
 function generarTodos(datos){
-    if(document.getElementById("todos")!=null){
-        document.getElementById("todos").remove();
-    }
+    limpiar();
 
     var tabla = document.createElement("table");
     tabla.classList.add("table");
@@ -220,3 +220,242 @@ function vistaDetallada(datos){
     })
 }
 
+function getPosts(id){
+    fetch("https://jsonplaceholder.typicode.com/users/"+id+"/posts")
+    .then(response => response.json())
+    .then(data => generarPosts(data))
+}
+
+function generarPosts(datos){
+    limpiar();
+
+    var tabla = document.createElement("table");
+    tabla.classList.add("table");
+    tabla.id = "posts";
+
+    var tr = document.createElement("tr");
+    
+    var th = document.createElement("th");
+    th.innerText = "ID";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Title";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Body";
+    tr.appendChild(th);
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Comentarios";
+    tr.appendChild(th);
+    tabla.appendChild(tr);
+
+    for(var i = 0 ; i< datos.length ; i++){
+        var tr = document.createElement("tr");
+
+        for(var j=1; j<4;j++){
+            var td = document.createElement("td");
+            td.innerText = Object.values(datos[i])[j];
+            tr.appendChild(td);
+        }
+        
+        var td = document.createElement("td");
+
+        var button = document.createElement("button");
+
+        button.setAttribute("postID",datos[i].id );
+
+        button.innerText = "Comentarios";
+
+        button.classList.add("btn");
+        button.classList.add("btn-outline-primary");
+
+        button.addEventListener("click", (e)=>{
+            getComments(e.target.getAttribute("postID"));
+        })
+        td.appendChild(button);
+
+
+
+        tr.appendChild(td);
+        
+        tabla.appendChild(tr);
+
+        
+    }
+    document.getElementById("listado").insertAdjacentElement("afterend", tabla);
+
+
+}
+
+
+function limpiar() {
+    if (document.getElementById("todos") != null) {
+        document.getElementById("todos").remove();
+    } else if (document.getElementById("posts") != null) {
+        document.getElementById("posts").remove();
+    } else if (document.getElementById("albums") != null) {
+        document.getElementById("albums").remove();
+    }
+    if (document.getElementById("comments") != null) {
+        document.getElementById("comments").remove();
+        document.getElementById("volver").remove();
+    } else if (document.getElementById("fotos") != null) {
+        document.getElementById("fotos").remove();
+    }
+    
+}
+
+function getComments(post){
+    fetch("https://jsonplaceholder.typicode.com/posts/"+post+"/comments")
+    .then(response => response.json())
+    .then(data => generarComments(data))
+}
+
+function generarComments(datos){
+    if (document.getElementById("comments") != null) {
+        document.getElementById("comments").remove();
+    
+        document.getElementById("volver").remove();}
+
+    var tabla = document.createElement("table");
+    tabla.classList.add("table");
+    tabla.id = "comments";
+
+    var tr = document.createElement("tr");
+    
+    var th = document.createElement("th");
+    th.innerText = "ID";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Nombre";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Email";
+    tr.appendChild(th);
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Body";
+    tr.appendChild(th);
+    tabla.appendChild(tr);
+
+    for(var i = 0 ; i< datos.length ; i++){
+        var tr = document.createElement("tr");
+
+        for(var j=1; j<Object.values(datos[i]).length;j++){
+            var td = document.createElement("td");
+            td.innerText = Object.values(datos[i])[j];
+            tr.appendChild(td);
+        }
+        tabla.appendChild(tr);
+    }
+    document.getElementById("posts").insertAdjacentElement("afterend", tabla);
+
+
+
+
+
+
+    var volver = document.createElement("button");
+    volver.id="volver";
+    volver.innerText = "Ocultar";
+    document.getElementById("comments").insertAdjacentElement("afterend", volver);
+    volver.addEventListener("click", (e)=>{
+        document.getElementById("comments").remove();
+        volver.remove();
+    })   
+}
+
+function getAlbums(id){
+    fetch("https://jsonplaceholder.typicode.com/users/"+id+"/albums")
+    .then(response => response.json())
+    .then(data => generarAlbums(data))
+}
+
+function generarAlbums(datos){
+    limpiar();
+
+    var tabla = document.createElement("table");
+    tabla.classList.add("table");
+    tabla.id = "albums";
+
+    var tr = document.createElement("tr");
+    
+    var th = document.createElement("th");
+    th.innerText = "ID";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Title";
+    tr.appendChild(th);
+    var th = document.createElement("th");
+    th.innerText = "Fotos";
+    tr.appendChild(th);
+    tabla.appendChild(tr);
+
+    for(var i=0; i< datos.length ; i++){
+        var tr = document.createElement("tr");
+
+        for(var j=1; j<3;j++){
+            var td = document.createElement("td");
+            td.innerText = Object.values(datos[i])[j];
+            tr.appendChild(td);
+        }
+
+        var td = document.createElement("td");
+        var button = document.createElement("button");
+        button.setAttribute("albumID",Object.values(datos[i])[1]);
+        button.innerText = "Fotos";
+        button.classList.add("btn","btn-outline-primary");
+
+        button.addEventListener("click",(e)=>{
+            getFotos(e.target.getAttribute("albumID"));
+        })
+
+        td.appendChild(button);
+        tr.appendChild(td);
+        tabla.appendChild(tr);
+    }
+    document.getElementById("listado").insertAdjacentElement("afterend", tabla);
+}
+
+function getFotos(id) {
+    fetch("https://jsonplaceholder.typicode.com/albums/"+id+"/photos")
+    .then(response => response.json())
+    .then(data => generarFotos(data))
+}
+
+function generarFotos(data) {
+    if(document.getElementById("fotos")!=null){
+        document.getElementById("fotos").remove();
+    }
+    var div = document.createElement("div");
+    div.id = "fotos";
+
+    for(var i = 0; i < data.length; i++) {
+        var div2 = document.createElement("div");
+        var img = document.createElement("img");
+        img.src = data[i].thumbnailUrl;
+        img.setAttribute("altLink",data[i].url)
+        img.addEventListener("click", (e)=>{
+            var tmp = e.target.src;
+            e.target.src = e.target.getAttribute("altLink");
+            e.target.setAttribute("altLink",tmp)
+        })
+        div2.appendChild(img);
+        var titulo = document.createElement("p");
+        titulo.innerText=data[i].title;
+        div2.appendChild(titulo);
+        div.appendChild(div2);
+    }
+
+
+    var button = document.createElement("button");
+    button.classList.add("btn","btn-outline-primary");
+    button.innerText="Ocultar";
+    button.addEventListener("click", (e)=>{
+        div.remove();
+    })
+    div.insertAdjacentElement("afterbegin", button);
+    
+    document.getElementById("albums").insertAdjacentElement("afterend", div);
+}
