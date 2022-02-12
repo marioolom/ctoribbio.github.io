@@ -1,0 +1,92 @@
+Diff
+Comprueba la diferencia entre el archivo abierto en el directorio de trabajo, y el archivo disponible en 
+el stage area.
+De la siguiente manera:
+git diff <archivo>
+Tambien se puede comprobar la diferencia entre ramas
+git diff <nombre rama> <archivo>
+Tambien podemos ver la diferencia entre el area de stage y el ultimo commit
+git diff --cached <archivo>
+Tambien podemos ver la diferencia entre el area de stage y un commit concreto
+git diff --cached <commit> <archivo>
+O ver las diferencias entre dos commits
+git diff <commit> <commit>
+
+
+
+Cherry-Pick
+Sirve para seleccionar un commit desde otra rama y traerlo rapidamente a nuestro
+area de trabajo, esto puede ser util si queremos probar unos cuantos cambios en otra
+rama y luego traerla.
+De la siguiente manera:
+git cherry-pick <commit>
+
+
+Log
+Sirve para ver el historial de commits, y con distintos argumentos podemos hacerlo en distintos modelos.
+        git log
+        git log --oneline (Solo una linea, mas compacto)
+        git log --oneline --decorate --all --graph (Con grafico para ver las ramas)
+        git log -p (Informe detallado del commit)
+        git log - p -n<numero> (Mismo que git log -p pero solo un numero concreto )
+        git log --author=<nombre> para ver los commits de un autor
+
+Push
+Sirve para subir los cambios al repositorio remoto, tambien puedes seleccionar la rama del repositorio remoto a la que quieres subir.
+De la siguiente manera
+git push
+Si queremos que se subamn todas las ramas podemos añadir --all
+git push --all
+Si queremos subir los commits, pero no queremos hacer un commit aun, podemos usar --force para ignorar el error de que hay cambios sin hacer commit
+git push --force
+
+Pull
+Sirve para extraer y descargar contenido desde un repositorio remoto, y que se actualize automaticamente el repositorio local, y es una combinacion de git fetch y git merge.
+Se utiliza de la siguiente manera
+git pull
+
+
+Branch
+Este comando se encarga de las ramas en general, por lo que hay muchas opciones del mismo.
+Podemos ver las ramas que existen con:
+git branch
+Podemos crear una nueva rama con:
+git branch <nombre>
+Podemos borrar una rama con: 
+git branch -d <nombre>
+Podemos renombrar una rama con: 
+git <nuevo nombre> -m <rama>
+
+Merge
+Se utilizar para unir ramas que van por distintos caminos, en una sola, en este caso, en la rama en la que estamos posicionados.
+Si existiesen conflictos entre ramas, se nos propondria la manera en la que solucionar estos conflictos.
+git merge <rama>
+
+Checkout
+Se utiliza para cambiarse entre ramas existentes en nuestro proyecto
+Mediante:
+git checkout <rama>
+Tambien podemos usarla para crear una rama y cambiarnos a ella nada mas crearla mediante
+git checkout -b <nombre>
+Clone
+Este comando sirve para clonar tanto un repositorio local como remoto, y poder trabajar con el.
+se utiliza de la siguiente manera: 
+git clone <link>
+Podemos clonar un repositorio a un directorio concreto
+git clone <link> <directorio>
+Se puede clonar un tag concreto con el siguiente comando:
+git clone --branch <tag> <link>
+
+Commit
+Con este comando se guardan los cambios que estan en el area de stage y se crea una nueva instantanea del estado del repositorio.
+Esto se haria de la siguiente manera:
+git commit -m <mensaje de commit>
+Si tienes cambios en el repositorio sin añadir al area de stage y no quieres hacer un git add previo puedes usar lo siguiente
+git commit -am <mensaje del commit>
+
+Add
+Con este comando podemos añadir los archivos al area de stage, que son los elementos que a posteriori se guardaran en el commit, en este comando le damos el archivo que hay que agregar al area de stage.
+Se hace de la siguiente manera: 
+git add <archivo>
+Tambien podemos añadir un directorio completo
+git add <directory>
