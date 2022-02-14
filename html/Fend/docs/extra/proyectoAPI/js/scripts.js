@@ -3,7 +3,7 @@ window.onload = function () {
     getData();
 
 }
-
+var users;
 function getData() {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
@@ -17,6 +17,7 @@ function getTodos(id) {
 }
 
 function construirTabla(datos) {
+    users = datos;
     var tabla = document.createElement('table');
     tabla.id = "listado";
     tabla.classList.add("table");
@@ -230,13 +231,13 @@ function generarPosts(datos) {
     var button = document.createElement("button");
 
     button.innerText = "Añadir Nuevo Post";
-
+    button.id = "crearPost";
     button.setAttribute("userId", datos[1].userId);
 
     button.classList.add("btn", "btn-outline-primary");
 
     button.addEventListener("click", (e) => {
-        createPost(e.target.getAttribute("userId"));
+        generarForm(e.target.getAttribute("userId"));
     })
 
     div.appendChild(button);
@@ -475,6 +476,57 @@ function generarFotos(data) {
     document.getElementById("albums").insertAdjacentElement("afterend", div);
 }
 
-function createPost(userId){
+function generarForm(userId){
+    var div = document.createElement("div");
+    div.innerHTML = '<form id="nuevoPost"><input type="text" id="titleInput" placeholder="Title"><input type="text" id="bodyInput" placeholder="Body"><input type="submit" id="submit"></form>'
+    document.getElementById("crearPost").insertAdjacentElement("afterend", div);
+
+    document.getElementById("nuevoPost").addEventListener("submit", (e)=>{
+        e.preventDefault();
+        validarForm(userId);
+    })
+}
+function validarForm(userId){
+    const title = document.getElementById("titleInput").value;
+    const body = document.getElementById("bodyInput").value;
+    var bool = false;
+    if(title.trim() == ""){
+        alert("Por favor introduce un titulo");
+        bool = true;
+    }
     
+    if(body.trim() == ""){
+        alert("Por favor introduce un cuerpo");
+        bool = true;
+    }
+
+    if(body.length <= 8){
+        alert("Por favor introduce un cuerpo de al menos 8 caracteres");
+        bool = true;
+    }
+
+    if(title.length <= 4){
+        alert("Por favor introduce un titulo de al menos 8 caracteres");
+        bool = true;
+    }
+
+    if(!bool){
+        crearPost(title,body,userId);
+    }
+}
+
+function crearPost(title,body,userId){
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+body: JSON.stringify({
+    title: title,
+    body: body,
+    userId: userId,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 }
