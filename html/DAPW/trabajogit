@@ -34,7 +34,7 @@ Sirve para ver el historial de commits, y con distintos argumentos podemos hacer
 Push
 Sirve para subir los cambios al repositorio remoto, tambien puedes seleccionar la rama del repositorio remoto a la que quieres subir.
 De la siguiente manera
-git push
+git pushN
 Si queremos que se subamn todas las ramas podemos añadir --all
 git push --all
 Si queremos subir los commits, pero no queremos hacer un commit aun, podemos usar --force para ignorar el error de que hay cambios sin hacer commit
@@ -55,7 +55,7 @@ git branch <nombre>
 Podemos borrar una rama con: 
 git branch -d <nombre>
 Podemos renombrar una rama con: 
-git <nuevo nombre> -m <rama>
+git branch <nuevo nombre> -m <rama>
 
 Merge
 Se utilizar para unir ramas que van por distintos caminos, en una sola, en este caso, en la rama en la que estamos posicionados.
@@ -68,6 +68,7 @@ Mediante:
 git checkout <rama>
 Tambien podemos usarla para crear una rama y cambiarnos a ella nada mas crearla mediante
 git checkout -b <nombre>
+
 Clone
 Este comando sirve para clonar tanto un repositorio local como remoto, y poder trabajar con el.
 se utiliza de la siguiente manera: 
